@@ -1,5 +1,85 @@
-@@include('header.htm') @@include('blocks/navigation.htm', {"home":"active",
-"home3": "active"})
+<!DOCTYPE html>
+
+<!--
+ // WEBSITE: https://themefisher.com
+ // TWITTER: https://twitter.com/themefisher
+ // FACEBOOK: https://www.facebook.com/themefisher
+ // GITHUB: https://github.com/themefisher/
+-->
+
+<html lang="en">
+<head>
+
+  <!-- Basic Page Needs
+  ================================================== -->
+  <meta charset="utf-8">
+  <title>AppleDrop</title>
+
+  <!-- Mobile Specific Metas
+  ================================================== -->
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="description" content="Bootstrap App Landing Template">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+  <meta name="author" content="Themefisher">
+  <meta name="generator" content="Themefisher Small Apps Template v1.0">
+  
+  <!-- theme meta -->
+  <meta name="theme-name" content="small-apps" />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Favicon -->
+  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
+  
+  <!-- PLUGINS CSS STYLE -->
+  <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
+  <link rel="stylesheet" href="plugins/themify-icons/themify-icons.css">
+  <link rel="stylesheet" href="plugins/slick/slick.css">
+  <link rel="stylesheet" href="plugins/slick/slick-theme.css">
+  <link rel="stylesheet" href="plugins/fancybox/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="plugins/aos/aos.css">
+
+  <!-- CUSTOM CSS -->
+  <link href="css/style.css" rel="stylesheet">
+
+</head>
+
+<body class="body-wrapper" data-spy="scroll" data-target=".privacy-nav">
+ <nav class="navbar main-nav navbar-expand-lg px-2 px-sm-0 py-2 py-lg-0">
+  <div class="container">
+    <a class="navbar-brand" href="index.html"><img src="images/Logo.png" alt="logo"></a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="ti-menu"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item active">
+          <a class="nav-link" href="index.html">Головна</a>
+        </li>
+        <li class="nav-item dropdown @@pages">
+          <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">Каталог
+            <span><i class="ti-angle-down"></i></span>
+          </a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item @@team" href="team.html">iPhone</a></li>
+            <li><a class="dropdown-item @@career" href="career.html">MacBook</a></li>
+            <li><a class="dropdown-item @@blog" href="blog.html">iPad</a></li>
+            <li><a class="dropdown-item @@blogSingle" href="blog-single.html">Apple Watch</a></li>
+          </ul>
+        </li>
+        <li class="nav-item @@about">
+          <a class="nav-link" href="about.html">Як це працює</a>
+        </li>
+        <li class="nav-item @@privacy">
+          <a class="nav-link" href="privacy-policy.html"> Політика конфіденційності</a>
+        </li>
+        <li class="nav-item @@contact">
+          <a class="nav-link" href="contact.html">Контакти</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
 <!--==================================
 =            Hero Section            =
 ===================================-->
@@ -116,14 +196,19 @@
     <div class="row">
       <div class="col-lg-4 col-md-6 align-self-center">
         <!-- Service 01 -->
-        @@include('blocks/service.htm', {"icon" : "ti-dashboard", "heading":
-        "Lifestyle Development", "description" : "Cras ultricies ligula sed
-        magna dictum porta. Cras ultricies ligula sed magna dictum porta.
-        Vivamus"})
+        <div class="service-block shadow">
+	<!-- Icon -->
+	<i class="ti-dashboard"></i>
+	<h3>Lifestyle Development</h3>
+	<p>Cras ultricies ligula sed magna dictum porta. Cras ultricies ligula sed magna dictum porta. Vivamus</p>
+</div>
         <!-- Service 02 -->
-        @@include('blocks/service.htm', {"icon" : "ti-headphone-alt", "heading":
-        "Impressive Support", "description" : "Cras ultricies ligula sed magna
-        dictum porta. Cras ultricies ligula sed magna dictum porta. Vivamus"})
+        <div class="service-block shadow">
+	<!-- Icon -->
+	<i class="ti-headphone-alt"></i>
+	<h3>Impressive Support</h3>
+	<p>Cras ultricies ligula sed magna dictum porta. Cras ultricies ligula sed magna dictum porta. Vivamus</p>
+</div>
       </div>
       <div class="col-lg-4 m-auto">
         <div class="app-preview">
@@ -132,14 +217,19 @@
       </div>
       <div class="col-lg-4 col-md-6 align-self-center">
         <!-- Service 03 -->
-        @@include('blocks/service.htm', {"icon" : "ti-ruler-pencil", "heading":
-        "UI/UX Design", "description" : "Cras ultricies ligula sed magna dictum
-        porta. Cras ultricies ligula sed magna dictum porta. Vivamus"})
+        <div class="service-block shadow">
+	<!-- Icon -->
+	<i class="ti-ruler-pencil"></i>
+	<h3>UI/UX Design</h3>
+	<p>Cras ultricies ligula sed magna dictum porta. Cras ultricies ligula sed magna dictum porta. Vivamus</p>
+</div>
         <!-- Service 04 -->
-        @@include('blocks/service.htm', {"icon" : "ti-stats-up", "heading":
-        "Performance Marketing", "description" : "Cras ultricies ligula sed
-        magna dictum porta. Cras ultricies ligula sed magna dictum porta.
-        Vivamus"})
+        <div class="service-block shadow">
+	<!-- Icon -->
+	<i class="ti-stats-up"></i>
+	<h3>Performance Marketing</h3>
+	<p>Cras ultricies ligula sed magna dictum porta. Cras ultricies ligula sed magna dictum porta. Vivamus</p>
+</div>
       </div>
     </div>
   </div>
@@ -284,5 +374,132 @@
 
 <!--====  End of App Features  ====-->
 
-@@include('blocks/call-to-action-app.htm') @@include('blocks/footer.htm')
-@@include('footer.htm')
+<section class="call-to-action-app section bg-blue">
+	<div class="container">
+		<div class="row">
+			<div class="col-lg-12 text-center">
+				<h2>📦 Готові отримати свій iPhone напряму з Америки?</h2>
+				<p>Залишіть заявку — ми підберемо модель, перевіримо стан і доставимо вам просто додому за 5–7 днів.</p>
+				<ul class="list-inline mt-4">
+					<li class="list-inline-item">
+						<a href="#contact-form" class="btn btn-main-md">
+							🔹 ЗАЛИШИТИ ЗАЯВКУ
+						</a>
+					</li>
+					<li class="list-inline-item">
+						<a href="https://t.me/your_telegram_username" target="_blank" class="btn btn-main-md">
+							🔹 НАПИСАТИ В TELEGRAM
+						</a>
+					</li>
+				</ul>
+			</div>
+	</div>
+</section> <!--============================
+=            Footer            =
+=============================-->
+<footer>
+  <div class="footer-main">
+    <div class="container">
+      <div class="row align-items-stretch">
+        <!-- Лого та соцмережі -->
+        <div class="col-lg-3 col-md-6 col-12 mb-4 mb-lg-0 d-flex flex-column justify-content-between">
+          <div class="block mb-3">
+            <a href="index.html"><img src="images/logo-alt.png" alt="footer-logo" style="max-width: 160px;"></a>
+          </div>
+          <div class="mt-3">
+            <ul class="social-icon list-inline">
+              <li class="list-inline-item">
+                <a href="https://t.me/yourtelegram" target="_blank" title="Telegram"><i class="ti-telegram"></i></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="https://instagram.com/yourinstagram" target="_blank" title="Instagram"><i class="ti-instagram"></i></a>
+              </li>
+              <li class="list-inline-item">
+                <a href="mailto:info@yourdomain.com" title="Email"><i class="ti-email"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+        <!-- Продукти -->
+        <div class="col-lg-2 col-md-6 col-12 mb-4 mb-lg-0">
+          <div class="block-2">
+            <h6 class="mb-3">📦 Продукти</h6>
+            <ul class="list-unstyled">
+              <li><a href="iphone.html">iPhone 11–14</a></li>
+              <li><a href="macbook.html">MacBook</a></li>
+              <li><a href="ipad.html">iPad</a></li>
+              <li><a href="watch.html">Apple Watch</a></li>
+              <li><a href="airpods.html">AirPods</a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- Послуги -->
+        <div class="col-lg-2 col-md-6 col-12 mb-4 mb-lg-0">
+          <div class="block-2">
+            <h6 class="mb-3">🛠 Послуги</h6>
+            <ul class="list-unstyled">
+              <li><a href="delivery.html">Доставка з США</a></li>
+              <li><a href="inspection.html">Перевірка стану</a></li>
+              <li><a href="warranty.html">Гарантія</a></li>
+              <li><a href="payment.html">Оплата при отриманні</a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- Документи -->
+        <div class="col-lg-2 col-md-6 col-12 mb-4 mb-lg-0">
+          <div class="block-2">
+            <h6 class="mb-3">📄 Документи</h6>
+            <ul class="list-unstyled">
+              <li><a href="terms.html">Умови використання</a></li>
+              <li><a href="privacy-policy.html">Політика конфіденційності</a></li>
+              <li><a href="offer.html">Публічна оферта</a></li>
+            </ul>
+          </div>
+        </div>
+        <!-- Контакти -->
+        <div class="col-lg-3 col-md-6 col-12">
+          <div class="block-2">
+            <h6 class="mb-3">📞 Контакти</h6>
+            <ul class="list-unstyled">
+              <li><a href="tel:+380991234567">+38 (099) 123-45-67</a></li>
+              <li><a href="mailto:info@yourdomain.com">info@yourdomain.com</a></li>
+              <li>Графік: Пн–Сб, 10:00–18:00</li>
+              <li>
+                <span>
+                  <a href="https://t.me/yourtelegram" target="_blank" class="me-2">Telegram</a> | 
+                  <a href="https://instagram.com/yourinstagram" target="_blank" class="ms-2">Instagram</a>
+                </span>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="text-center bg-dark py-4">
+    <small class="text-secondary">
+      &copy; <script>document.write(new Date().getFullYear())</script> Всі права захищено. Розробка — <a href="https://themefisher.com/" class="text-secondary">Themefisher</a>
+    </small>
+  </div>
+</footer>
+
+  <!-- To Top -->
+  <div class="scroll-top-to">
+    <i class="ti-angle-up"></i>
+  </div>
+  
+  <!-- JAVASCRIPTS -->
+  <script src="plugins/jquery/jquery.min.js"></script>
+  <script src="plugins/bootstrap/bootstrap.min.js"></script>
+  <script src="plugins/slick/slick.min.js"></script>
+  <script src="plugins/fancybox/jquery.fancybox.min.js"></script>
+  <script src="plugins/syotimer/jquery.syotimer.min.js"></script>
+  <script src="plugins/aos/aos.js"></script>
+  <!-- google map -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyAgeuuDfRlweIs7D6uo4wdIHVvJ0LonQ6g"></script>
+  <script src="plugins/google-map/gmap.js"></script>
+  
+  <script src="js/script.js"></script>
+</body>
+
+</html>
