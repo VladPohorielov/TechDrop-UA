@@ -410,6 +410,18 @@ p {
 .main-nav .navbar-brand {
   padding: 0;
 }
+.main-nav .navbar-brand img {
+  max-height: 90px;
+  width: auto;
+  height: auto;
+  display: block;
+  transition: max-height 0.2s;
+}
+@media (max-width: 576px) {
+  .main-nav .navbar-brand img {
+    max-height: 36px;
+  }
+}
 .main-nav .navbar-nav .nav-item {
   position: relative;
   font-family: "Inter", sans-serif;
@@ -1281,6 +1293,62 @@ hr {
 }
 .team-sm p {
   margin-top: 15px;
+}
+
+.iphone-grid {
+  padding: 40px 0;
+  text-align: center;
+}
+.iphone-grid h2 {
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  font-weight: 700;
+}
+.iphone-grid .grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  gap: 2rem;
+  justify-items: center;
+  align-items: stretch;
+  margin: 0 auto;
+  max-width: 1200px;
+}
+.iphone-grid .product-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 16px rgba(0, 0, 0, 0.07);
+  padding: 1.5rem 1rem 1rem 1rem;
+  text-decoration: none;
+  color: #222;
+  transition: box-shadow 0.2s, transform 0.2s;
+  min-height: 240px;
+  position: relative;
+  border: 1px solid #f0f0f0;
+}
+.iphone-grid .product-card:hover {
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.13);
+  transform: translateY(-4px) scale(1.03);
+  color: #007aff;
+}
+.iphone-grid .product-card img {
+  max-width: 100px;
+  max-height: 120px;
+  margin-bottom: 1rem;
+  -o-object-fit: contain;
+     object-fit: contain;
+  background: #f9f9f9;
+  border-radius: 8px;
+  transition: transform 0.2s;
+}
+.iphone-grid .product-card h4 {
+  font-size: 1.1rem;
+  font-weight: 500;
+  margin: 0;
+  margin-top: auto;
+  color: inherit;
 }
 
 .featured-article {
