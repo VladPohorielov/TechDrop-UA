@@ -1,3 +1,6 @@
+// [SCSS_REFACTORING] Added variables import for modern @use syntax
+@use "variables" as *;
+
 // Google Font Import
 @import url('https://fonts.googleapis.com/css?family=Lora:400,400i|Open+Sans:300,400,600,700,800');
 
@@ -45,8 +48,8 @@ cite{
 	font-family: $secondary-font;
 	font-style: italic;
 }
-// Placeholder Color Change
-.form-control::-webkit-input-placeholder { 
+// [SCSS_REFACTORING] Modern placeholder selector
+.form-control::placeholder { 
 	color: $text-color; 
 	line-height: 25px;
 	font-size: 16px;

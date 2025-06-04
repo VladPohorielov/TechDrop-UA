@@ -1,3 +1,7 @@
+@use "../variables" as *;
+@use "../media-queries" as *;
+@use "../common" as *;
+
 .privacy {
 	.privacy-nav {
 		position: -webkit-sticky; // required for Safari

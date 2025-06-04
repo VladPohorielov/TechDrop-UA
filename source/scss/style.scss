@@ -1,43 +1,38 @@
-@import "variables.scss";
+// [SCSS_REFACTORING] Updated to modern SCSS syntax
+// =================================================================
+// Core Variables and Mixins
+// =================================================================
+@use "variables" as *;
+@use "media-queries" as *;
 
-@import "media-queries.scss";
+// =================================================================
+// Base Styles
+// =================================================================
+@use "typography";
+@use "tabs";
+@use "lists";
+@use "common";
+@use "button";
 
-@import "typography.scss";
+// =================================================================
+// Components
+// =================================================================
+@use "components/navigation";
+@use "components/footer";
+@use "components/call-to-action";
+@use "components/modal";
 
-@import "tabs.scss";
-
-@import "lists.scss";
-
-@import "common.scss";
-
-@import "button.scss";
-
-@import "components/navigation.scss";
-
-@import "components/footer.scss";
-
-@import "components/call-to-action.scss";
-
-@import "components/modal.scss";
-
-@import "pages/home.scss";
-
-@import "pages/team.scss";
-
-@import "pages/blog.scss";
-
-@import "pages/about.scss";
-
-@import "pages/404.scss";
-
-@import "pages/career.scss";
-
-@import "pages/faq.scss";
-
-@import "pages/privacy.scss";
-
-@import "pages/sign-in.scss";
-
-@import "pages/comming-soon.scss";
-
-@import "pages/contact.scss";
+// =================================================================
+// Pages
+// =================================================================
+@use "pages/home";
+@use "pages/team";
+@use "pages/blog";
+@use "pages/about";
+@use "pages/404" as error-page;
+@use "pages/career";
+@use "pages/faq";
+@use "pages/privacy";
+@use "pages/sign-in";
+@use "pages/comming-soon";
+@use "pages/contact";

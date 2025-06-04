@@ -1,3 +1,6 @@
+@use "variables" as *;
+@use "media-queries" as *;
+
 body {
   overflow-x: hidden;
   font-family: 'Inter', sans-serif;
@@ -8,8 +11,8 @@ body {
 }
 
 .shadow {
-  -webkit-box-shadow: 0 7px 20px 0 rgba(0, 0, 0, 0.08);
   box-shadow: 0 7px 20px 0 rgba(0, 0, 0, 0.08);
+  will-change: box-shadow;
 }
 
 .overlay {
@@ -28,7 +31,7 @@ a {
   font-size: inherit;
   color: #007aff;
   text-decoration: none;
-  transition: color 0.2s;
+  transition: color 0.2s ease;
 }
 
 a:focus,
@@ -48,24 +51,36 @@ a:hover {
 .bg-1 {
   background: url(../images/background/promo-video-back.jpg) fixed no-repeat;
   background-size: cover;
+  background-position: center;
+  will-change: scroll-position;
 }
 
 .bg-coming-soon {
   background: url(../images/background/comming-soon.jpg) fixed no-repeat;
   background-size: cover;
   background-position: bottom;
+  will-change: scroll-position;
 }
 
 .section {
   padding: 60px 0;
+  
+  @include mobile {
+    padding: 40px 0;
+  }
 }
 
 .section-title {
   text-align: center;
+  margin-bottom: 80px;
 
   h2 {
     font-size: 32px;
     margin-bottom: 24px;
+    
+    @include mobile {
+      font-size: 24px;
+    }
   }
 
   p {
@@ -76,15 +91,12 @@ a:hover {
       width: 100%;
     }
   }
-
-  margin-bottom: 80px;
 }
 
 .page-title {
   text-align: center;
 }
 
-// Promo Video
 .video {
   position: relative;
 
@@ -99,31 +111,18 @@ a:hover {
 
   .video-button {
     position: absolute;
-    left: 0;
-    top: 0;
+    inset: 0;
     display: flex;
-    -webkit-box-pack: center;
-    -ms-flex-pack: center;
     justify-content: center;
-    -webkit-box-align: center;
-    -ms-flex-align: center;
     align-items: center;
-    width: 100%;
-    height: 100%;
   }
 
   .video-box {
     a {
       width: 100%;
       height: 100%;
-      display: -webkit-box;
-      display: -ms-flexbox;
       display: flex;
-      -webkit-box-pack: center;
-      -ms-flex-pack: center;
       justify-content: center;
-      -webkit-box-align: center;
-      -ms-flex-align: center;
       align-items: center;
 
       i {
@@ -131,10 +130,16 @@ a:hover {
         width: 125px;
         font-size: 40px;
         background: $primary-color;
-        border-radius: 100%;
+        border-radius: 50%;
         color: $light;
         line-height: 125px;
         text-align: center;
+        transition: transform 0.2s ease;
+        
+        &:hover {
+          transform: scale(1.1);
+        }
+        
         @include desktop {
           height: 80px;
           width: 80px;
@@ -159,20 +164,24 @@ a:hover {
     margin-bottom: 20px;
     border: 1px solid $border-color;
     font-size: 14px;
+    transition: border-color 0.2s ease;
 
     &:focus {
       border: 1px solid $primary-color;
-      box-shadow: none;
+      box-shadow: 0 0 0 3px rgba($primary-color, 0.1);
     }
   }
 }
+
 textarea.form-control {
   &.main {
-    height: initial;
+    height: auto;
+    min-height: 120px;
+    resize: vertical;
   }
 }
 
-.form-control::-webkit-input-placeholder {
+.form-control::placeholder {
   color: $text-color;
   font-size: 14px;
 }
@@ -186,7 +195,6 @@ textarea.form-control {
     @include tablet {
       margin-left: 0;
       margin-bottom: 30px;
-
     }
   }
 }
@@ -220,27 +228,39 @@ h1, h2, h3, h4 {
   font-weight: 600;
   line-height: 1.3;
   letter-spacing: -0.5px;
+  margin-bottom: 1rem;
 }
 
 h1 {
   font-size: 40px;
+  
+  @include mobile {
+    font-size: 28px;
+  }
 }
 
 p {
   font-size: 16px;
   margin-bottom: 12px;
+  line-height: 1.6;
 }
 
 .btn {
   font-size: 15px;
   padding: 12px 28px;
   border-radius: 8px;
-  background-color: #007aff;
-  color: #fff;
+  background-color: $primary-color;
+  color: $light;
   transition: all 0.2s ease-in-out;
   border: none;
-}
-
-.btn:hover {
-  background-color: #005fcc;
+  cursor: pointer;
+  
+  &:hover {
+    background-color: $primary-color-hover;
+    transform: translateY(-1px);
+  }
+  
+  &:focus {
+    box-shadow: 0 0 0 3px rgba($primary-color, 0.4);
+  }
 }
