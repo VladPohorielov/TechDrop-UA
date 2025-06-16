@@ -1,317 +1,438 @@
-@@include('header-about.htm') @@include('blocks/navigation.htm', {"about": "active"})
+﻿@@include('header.htm') @@include('blocks/navigation.htm', {"pages":"active", "about":"active"})
 
 <!--===============================
-=            Our Story            =
+=            Page Title           =
+================================-->
+<section class="page-title">
+  <div class="container">
+    <div class="row">
+      <div class="col-md-8 offset-md-2 text-center">
+        <h1>Про TechDrop UA</h1>
+        <p>Надійний партнер у світі Apple технологій з США</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!--===============================
+=            Hero Story           =
 ================================-->
 <main>
-  <section class="section about p-0">
-    <div class="container">
-      <div class="row">
-        <div class="col-lg-6 align-self-center">
-          <div class="content text-center text-lg-left">
-            <!-- зміна: покращено h1 заголовок для кращого SEO -->
-            <h1>Про TechDrop UA - Як ми доставляємо iPhone з США</h1>
-            <!-- Story -->
-            <p>
-              Ви залишаєте заявку або просто пишете нам у Telegram.<br />
-              Ми консультуємо, підбираємо і показуємо реальні моделі, які можна
-              купити вже зараз. Ніяких "під замовлення" чи "подумаємо завтра".
-            </p>
+  <section class="section about-hero p-0">
+    <div class="container-fluid">
+      <div class="row align-items-center">
+        <div class="col-lg-6 p-0">
+          <div class="about-hero-image">
+            <img
+              class="w-100"
+              src="images/about/story-slider-01.jpg"
+              alt="TechDrop UA - команда професіоналів"
+              style="height: 600px; object-fit: cover"
+            />
           </div>
         </div>
-        <div class="col-lg-6 mt-4 mt-lg-0">
-          <!-- Story Image Slider -->
-          <div class="about-slider">
-            <!-- Story Image -->
-            <div class="item">
-              <img
-                class="w-100"
-                src="images/about/story-slider-01.jpg"
-                alt="Процес викупу iPhone з США - наша робота"
-                loading="lazy"
-              />
-            </div>
-            <!-- Story Image -->
-            <div class="item">
-              <img
-                class="w-100"
-                src="images/about/story-slider-01.jpg"
-                alt="Перевірка iPhone перед відправкою в Україну"
-                loading="lazy"
-              />
-            </div>
-            <!-- Story Image -->
-            <div class="item">
-              <img
-                class="w-100"
-                src="images/about/story-slider-01.jpg"
-                alt="Упакування та доставка iPhone з Америки"
-                loading="lazy"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!--====  End of Our Story  ====-->
-
-  <!--================================
-=            Behind Story          =
-=================================-->
-  <section class="section">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <div class="section-title mb-0">
-            <h2>
-              Викуп і перевірка
-              <a
-                href="https://themefisher.com/products/small-apps-free-app-landing-page-template/"
-              ></a>
+        <div class="col-lg-6">
+          <div class="about-hero-content p-5">
+            <span class="text-primary small font-weight-bold"
+              >НАША ІСТОРІЯ</span
+            >
+            <h2 class="mt-2 mb-4">
+              Від ідеї до найкращого сервісу доставки iPhone з США
             </h2>
-            <p>
-              Використовуємо тільки перевірені платформи: Swappa, eBay, Amazon.
-              Кожен пристрій проходить ручну перевірку — батарея, Face ID,
-              камера, дисплей. Якщо щось не так — не відправляємо.
+            <p class="lead mb-4">
+              Починали як звичайні покупці, які самі стикались з проблемами
+              придбання оригінальних iPhone в Україні. Високі ціни, сумнівна
+              якість, відсутність гарантій - все це спонукало нас створити
+              власне рішення.
             </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!--====  End of Behind Story  ====-->
-
-  <!--================================
-=            Behind Story          =
-=================================-->
-  <section class="section">
-    <div class="container">
-      <div class="row">
-        <div class="col-12">
-          <div class="section-title mb-0">
-            <h2>Швидка доставка + без передплат</h2>
-            <p>
-              Після перевірки — відправка з трек-номером. Телефон їде напряму до
-              вас, у середньому за 5–7 днів. Ви спочатку отримуєте, перевіряєте
-              — і тільки потім оплачуєте.
+            <p class="mb-4">
+              За 3 роки ми доставили понад <strong>2500+ iPhone</strong> і
+              створили систему, якій довіряють тисячі українців. Наша місія -
+              зробити якісні Apple продукти доступними для кожного.
             </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!--====  End of Behind Story  ====-->
-
-  <!--==================================
-=            Create Story            =
-===================================-->
-
-  <section class="section create-stories pt-0">
-    <div class="container">
-      <div class="row d-flex flex-wrap align-items-stretch">
-        <div class="col-lg-6 d-flex">
-          <div class="block d-flex flex-column justify-content-center w-100">
-            <!-- Image -->
-            <img
-              class="img-fluid mb-3 mb-lg-4"
-              src="images/blog/post-01.jpg"
-              alt="Перевірка iPhone перед доставкою - наші стандарти якості"
-              loading="lazy"
-            />
-            <!-- Heading -->
-            <h3>Що ми перевіряємо перед доставкою</h3>
-            <!-- Story -->
-            <p>
-              Ми не просто купуємо айфон — ми його перевіряємо, як для себе:
-            </p>
-            <ul class="adaptive-list">
-              <li>🧪 Стан батареї (відсоток зносу)</li>
-              <li>📸 Камера, Face ID, звук, мікрофон</li>
-              <li>📦 Чистота акаунтів, геолокація, iCloud</li>
-              <li>📋 Серійний номер + візуальний стан</li>
-            </ul>
-            <p>
-              Лише після перевірки ми пакуємо пристрій і готуємо до відправки.
-            </p>
-          </div>
-        </div>
-        <div class="col-lg-6 d-flex mt-5 mt-lg-0">
-          <div class="block d-flex flex-column justify-content-center w-100">
-            <!-- Image -->
-            <img
-              class="img-fluid mb-3 mb-lg-4"
-              src="images/blog/post-03.jpg"
-              alt="Що ви отримуєте - оригінальний iPhone з США"
-              loading="lazy"
-            />
-            <!-- Heading -->
-            <h3>Що ти отримаєш</h3>
-            <ul class="adaptive-list">
-              <li>Оригінальний iPhone з США</li>
-              <li>Упакований, з перевіреним станом</li>
-              <li>Доставлений за 5–7 днів</li>
-              <li>З гарантією і без передплат</li>
-            </ul>
-            <p>
-              Ми не продаємо телефони — ми будуємо довіру. І ти її відчуєш ще до
-              першого кліку "Замовити".
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!--====  End of Create Story  ====-->
-
-  <!--=====================================
-=            Quotes Slider              =
-======================================-->
-  <section class="section quotes pt-0">
-    <div class="container">
-      <div class="row">
-        <div class="col-10 m-auto text-center">
-          <div class="quote-slider">
-            <div class="item mb-4">
-              <!-- Quote -->
-              <h2>Люди не купують iPhone у нас. Вони купують спокій.</h2>
-              <cite class="ml-0">— AppleDrop Team</cite>
-            </div>
-            <div class="item mb-4">
-              <!-- Quote -->
-              <h2>
-                Ми не обіцяємо чудо. Ми просто привозимо те, що ви давно хотіли
-                — чесно.
-              </h2>
-              <!-- Company -->
-              <cite class="ml-0">— AppleDrop Team</cite>
+            <div class="row stats-row">
+              <div class="col-md-4 mb-3">
+                <div class="stat-item text-center">
+                  <h3 class="text-primary mb-1">2500+</h3>
+                  <span class="small text-muted">Доставлених iPhone</span>
+                </div>
+              </div>
+              <div class="col-md-4 mb-3">
+                <div class="stat-item text-center">
+                  <h3 class="text-primary mb-1">99.8%</h3>
+                  <span class="small text-muted">Задоволених клієнтів</span>
+                </div>
+              </div>
+              <div class="col-md-4 mb-3">
+                <div class="stat-item text-center">
+                  <h3 class="text-primary mb-1">5-7</h3>
+                  <span class="small text-muted">Днів доставки</span>
+                </div>
+              </div>
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
-  <!--====  End of Quotes Slider  ====-->
-
-  <!--=====================================
-=            Client Slider              =
-======================================-->
-  <section class="section clients bg-gray">
-    <div class="container">
-      <div class="row">
-        <div class="col-10 m-auto text-center">
-          <h3>Featured In</h3>
-          <div class="client-slider">
-            <div class="item mb-4">
-              <img
-                class="m-auto"
-                src="images/clients/business-finder.png"
-                alt="business-finder"
-                loading="lazy"
-              />
-            </div>
-            <div class="item mb-4">
-              <img
-                class="m-auto"
-                src="images/clients/forbes.png"
-                alt="forbes"
-                loading="lazy"
-              />
-            </div>
-            <div class="item mb-4">
-              <img
-                class="m-auto"
-                src="images/clients/venture-beat.png"
-                alt="venture-beat"
-                loading="lazy"
-              />
-            </div>
-            <div class="item mb-4">
-              <img
-                class="m-auto"
-                src="images/clients/tech-crunch-new.png"
-                alt="TechCrunch"
-                loading="lazy"
-              />
-            </div>
-            <div class="item mb-4">
-              <img
-                class="m-auto"
-                src="images/clients/forbes.png"
-                alt="forbes"
-                loading="lazy"
-              />
-            </div>
-            <div class="item mb-4">
-              <img
-                class="m-auto"
-                src="images/clients/venture-beat.png"
-                alt="venture-beat"
-                loading="lazy"
-              />
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!--====  End of Client Slider  ====-->
 
   <!--===============================
-=            Our Story            =
-================================-->
-  <section class="section about pt-0">
+  =            Our Process          =
+  ================================-->
+  <section class="section bg-gray">
     <div class="container">
       <div class="row">
-        <div class="col-lg-6 align-self-center">
-          <div class="content text-center text-lg-left">
-            <!-- Headline -->
-            <h2>Хто ми?</h2>
-            <!-- Story -->
-            <p>
-              Ми — команда, яка допомагає українцям отримувати чесні, перевірені
-              iPhone з США. Без переплат. Без підводних каменів. Просто, як
-              замовити піцу.
+        <div class="col-12 text-center mb-5">
+          <span class="text-primary small font-weight-bold">НАШ ПРОЦЕС</span>
+          <h2 class="mt-2">Як ми забезпечуємо якість</h2>
+          <p class="lead">Кожен етап продуманий до дрібниць</p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div
+            class="process-card text-center p-4 h-100 bg-white rounded shadow-sm"
+          >
+            <div class="process-icon mb-3">
+              <div
+                class="icon-circle bg-primary text-white d-inline-flex align-items-center justify-content-center"
+                style="width: 60px; height: 60px; border-radius: 50%"
+              >
+                <i class="ti-search" style="font-size: 24px"></i>
+              </div>
+            </div>
+            <h5 class="mb-3">1. Підбір та викуп</h5>
+            <p class="text-muted small">
+              Шукаємо найкращі пропозиції на Swappa, eBay, Amazon. Викуповуємо
+              тільки від перевірених продавців з високим рейтингом.
             </p>
           </div>
         </div>
-        <div class="col-lg-6 mt-5 mt-lg-0">
-          <!-- Story Image Slider -->
-          <div class="about-slider">
-            <!-- Story Image -->
-            <div class="item">
+
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div
+            class="process-card text-center p-4 h-100 bg-white rounded shadow-sm"
+          >
+            <div class="process-icon mb-3">
+              <div
+                class="icon-circle bg-primary text-white d-inline-flex align-items-center justify-content-center"
+                style="width: 60px; height: 60px; border-radius: 50%"
+              >
+                <i class="ti-check-box" style="font-size: 24px"></i>
+              </div>
+            </div>
+            <h5 class="mb-3">2. Детальна перевірка</h5>
+            <p class="text-muted small">
+              Тестуємо кожну функцію: камери, Face ID, батарею, дисплей,
+              динаміки. Перевіряємо iCloud, carrier lock, історію ремонтів.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div
+            class="process-card text-center p-4 h-100 bg-white rounded shadow-sm"
+          >
+            <div class="process-icon mb-3">
+              <div
+                class="icon-circle bg-primary text-white d-inline-flex align-items-center justify-content-center"
+                style="width: 60px; height: 60px; border-radius: 50%"
+              >
+                <i class="ti-package" style="font-size: 24px"></i>
+              </div>
+            </div>
+            <h5 class="mb-3">3. Безпечна упаковка</h5>
+            <p class="text-muted small">
+              Використовуємо спеціальні захисні матеріали. Кожен телефон
+              упакований як для себе - з максимальним захистом.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-3 col-md-6 mb-4">
+          <div
+            class="process-card text-center p-4 h-100 bg-white rounded shadow-sm"
+          >
+            <div class="process-icon mb-3">
+              <div
+                class="icon-circle bg-primary text-white d-inline-flex align-items-center justify-content-center"
+                style="width: 60px; height: 60px; border-radius: 50%"
+              >
+                <i class="ti-truck" style="font-size: 24px"></i>
+              </div>
+            </div>
+            <h5 class="mb-3">4. Швидка доставка</h5>
+            <p class="text-muted small">
+              Відправляємо експрес-доставкою з трек-номером. Ви отримуєте
+              телефон за 5-7 днів з можливістю перевірки.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--===============================
+  =            Why Choose Us        =
+  ================================-->
+  <section class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-lg-6 mb-5 mb-lg-0">
+          <span class="text-primary small font-weight-bold">ЧОМУ МИ?</span>
+          <h2 class="mt-2 mb-4">Що робить нас особливими</h2>
+
+          <div class="feature-list">
+            <div class="feature-item d-flex mb-4">
+              <div class="feature-icon mr-3">
+                <i class="ti-shield text-primary" style="font-size: 24px"></i>
+              </div>
+              <div class="feature-content">
+                <h5 class="mb-2">Гарантія якості</h5>
+                <p class="text-muted small">
+                  30 днів гарантії на всі функції + міжнародна гарантія Apple.
+                  Якщо щось не так - повертаємо гроші або міняємо пристрій.
+                </p>
+              </div>
+            </div>
+
+            <div class="feature-item d-flex mb-4">
+              <div class="feature-icon mr-3">
+                <i
+                  class="ti-credit-card text-primary"
+                  style="font-size: 24px"
+                ></i>
+              </div>
+              <div class="feature-content">
+                <h5 class="mb-2">Без передплат</h5>
+                <p class="text-muted small">
+                  Платите тільки після отримання та перевірки товару. Ніяких
+                  ризиків - спочатку дивитесь, потім платите.
+                </p>
+              </div>
+            </div>
+
+            <div class="feature-item d-flex mb-4">
+              <div class="feature-icon mr-3">
+                <i
+                  class="ti-headphone-alt text-primary"
+                  style="font-size: 24px"
+                ></i>
+              </div>
+              <div class="feature-content">
+                <h5 class="mb-2">Підтримка 24/7</h5>
+                <p class="text-muted small">
+                  Завжди на зв'язку в Telegram. Відповідаємо протягом 15 хвилин,
+                  навіть у вихідні. Ваші питання - наш пріоритет.
+                </p>
+              </div>
+            </div>
+
+            <div class="feature-item d-flex">
+              <div class="feature-icon mr-3">
+                <i class="ti-bolt text-primary" style="font-size: 24px"></i>
+              </div>
+              <div class="feature-content">
+                <h5 class="mb-2">Швидкість</h5>
+                <p class="text-muted small">
+                  Від заявки до доставки - максимум 10 днів. Никого чекання "під
+                  замовлення" чи невизначеності.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-6">
+          <div class="about-features-image">
+            <img
+              class="w-100 rounded shadow"
+              src="images/blog/post-01.jpg"
+              alt="Перевірка якості iPhone в TechDrop UA"
+            />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--===============================
+  =            Team Section         =
+  ================================-->
+  <section class="section bg-gray">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center mb-5">
+          <span class="text-primary small font-weight-bold">НАША КОМАНДА</span>
+          <h2 class="mt-2">Люди, які роблять це можливим</h2>
+          <p class="lead">
+            Досвідчені професіонали, які знають Apple технології зсередини
+          </p>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="team-member text-center bg-white p-4 rounded shadow-sm">
+            <div class="member-photo mb-3">
               <img
-                class="w-100"
                 src="images/about/story-slider-01.jpg"
-                alt="Команда AppleDrop - хто ми"
-                loading="lazy"
+                alt="Олександр - засновник TechDrop UA"
+                class="rounded-circle"
+                style="width: 120px; height: 120px; object-fit: cover"
               />
             </div>
-            <!-- Story Image -->
-            <div class="item">
+            <h5 class="mb-1">Олександр</h5>
+            <span class="text-primary small">Засновник і CEO</span>
+            <p class="text-muted small mt-3">
+              5+ років досвіду роботи з Apple техникою. Особисто контролює
+              якість кожного пристрою.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="team-member text-center bg-white p-4 rounded shadow-sm">
+            <div class="member-photo mb-3">
               <img
-                class="w-100"
-                src="images/about/story-slider-01.jpg"
-                alt="Наша місія - чесна доставка iPhone"
-                loading="lazy"
+                src="images/blog/post-03.jpg"
+                alt="Марія - менеджер з якості"
+                class="rounded-circle"
+                style="width: 120px; height: 120px; object-fit: cover"
               />
             </div>
-            <!-- Story Image -->
-            <div class="item">
+            <h5 class="mb-1">Марія</h5>
+            <span class="text-primary small">Менеджер з якості</span>
+            <p class="text-muted small mt-3">
+              Сертифікований спеціаліст Apple. Відповідає за технічну перевірку
+              всіх пристроїв.
+            </p>
+          </div>
+        </div>
+
+        <div class="col-lg-4 col-md-6 mb-4">
+          <div class="team-member text-center bg-white p-4 rounded shadow-sm">
+            <div class="member-photo mb-3">
               <img
-                class="w-100"
                 src="images/about/story-slider-01.jpg"
-                alt="AppleDrop - довіра та якість"
-                loading="lazy"
+                alt="Андрій - логістика та доставка"
+                class="rounded-circle"
+                style="width: 120px; height: 120px; object-fit: cover"
               />
+            </div>
+            <h5 class="mb-1">Андрій</h5>
+            <span class="text-primary small">Логістика</span>
+            <p class="text-muted small mt-3">
+              Експерт міжнародних доставок. Забезпечує швидку та безпечну
+              доставку по всій Україні.
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!--===============================
+  =            Testimonials         =
+  ================================-->
+  <section class="section">
+    <div class="container">
+      <div class="row">
+        <div class="col-12 text-center mb-5">
+          <span class="text-primary small font-weight-bold"
+            >ВІДГУКИ КЛІЄНТІВ</span
+          >
+          <h2 class="mt-2">Що кажуть наші клієнти</h2>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-4 mb-4">
+          <div class="testimonial-card bg-white p-4 rounded shadow-sm h-100">
+            <div class="stars mb-3">
+              <i class="ti-star text-warning"></i>
+              <i class="ti-star text-warning"></i>
+              <i class="ti-star text-warning"></i>
+              <i class="ti-star text-warning"></i>
+              <i class="ti-star text-warning"></i>
+            </div>
+            <p class="mb-3">
+              "Замовляв iPhone 15 Pro. Все чітко, швидко, без обману. Телефон
+              прийшов в ідеальному стані, як новий. Однозначно рекомендую!"
+            </p>
+            <div class="client-info">
+              <strong>Дмитро К.</strong>
+              <span class="text-muted small d-block">Київ</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 mb-4">
+          <div class="testimonial-card bg-white p-4 rounded shadow-sm h-100">
+            <div class="stars mb-3">
+              <i class="ti-star text-warning"></i>
+              <i class="ti-star text-warning"></i>
+              <i class="ti-star text-warning"></i>
+              <i class="ti-star text-warning"></i>
+              <i class="ti-star text-warning"></i>
+            </div>
+            <p class="mb-3">
+              "Спочатку сумнівалася, але вирішила спробувати. Результат
+              перевершив очікування! Економія майже 15 тисяч гривень."
+            </p>
+            <div class="client-info">
+              <strong>Анна М.</strong>
+              <span class="text-muted small d-block">Львів</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="col-lg-4 mb-4">
+          <div class="testimonial-card bg-white p-4 rounded shadow-sm h-100">
+            <div class="stars mb-3">
+              <i class="ti-star text-warning"></i>
+              <i class="ti-star text-warning"></i>
+              <i class="ti-star text-warning"></i>
+              <i class="ti-star text-warning"></i>
+              <i class="ti-star text-warning"></i>
+            </div>
+            <p class="mb-3">
+              "Професійний підхід на всіх етапах. Постійний зв'язок, чіткі
+              терміни. Буду замовляти ще!"
+            </p>
+            <div class="client-info">
+              <strong>Сергій П.</strong>
+              <span class="text-muted small d-block">Одеса</span>
             </div>
           </div>
         </div>
       </div>
     </div>
   </section>
-  <!--====  End of Our Story  ====-->
+
+  <!--===============================
+  =            CTA Section          =
+  ================================-->
+  <section class="section bg-primary text-white">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-lg-8">
+          <h2 class="mb-3">
+            Готові приєднатися до тисяч задоволених клієнтів?
+          </h2>
+          <p class="lead mb-4 mb-lg-0">
+            Не чекайте! Почніть економити на якісних iPhone з США вже сьогодні.
+          </p>
+        </div>
+        <div class="col-lg-4 text-lg-right">
+          <a href="contact.html" class="btn btn-white btn-lg">
+            Зв'язатися з нами
+          </a>
+        </div>
+      </div>
+    </div>
+  </section>
 </main>
 
-@@include('blocks/cta-hire.htm') @@include('blocks/footer.htm')
 @@include('footer.htm')

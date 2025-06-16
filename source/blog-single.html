@@ -1,6 +1,4 @@
-@@include('header.htm') @@include('blocks/navigation.htm', {"pages" : "active", "blogSingle" : "active"})
-
-<!--====================================
+﻿<!--====================================
 =            Single Article            =
 =====================================-->
 <section class="section" id="apple-watch-models">
@@ -150,4 +148,13 @@
 
 <!--====  End of Related Article  ====-->
 
-@@include('blocks/footer.htm') @@include('footer.htm')
+
+
+
+        param($match)
+        $parts = $match.Value -split '\s+@@include'
+        $result = $parts[0]
+        for ($i = 1; $i -lt $parts.Length; $i++) {
+            $result += "`r`n@@include" + $parts[$i]
+        }
+        return $result

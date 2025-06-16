@@ -1,149 +1,61 @@
-@@include('header-delivery.htm') @@include('blocks/navigation.htm', {"services" : "active"}) @@include('blocks/page-title.htm', {"title" : "Доставка з США", "description" : "Швидка та безпечна доставка Apple техніки з США в Україну. Детальна інформація про процес доставки."})
+﻿@@include('header.htm')
+@@include('blocks/navigation.htm', {"pages" : "active", "delivery" : "active"})
+@@include('blocks/page-title.htm', {"title" : "Доставка", "description" : "Детальна інформація про доставку техніки Apple з США"})
 
-<!--======================================
-=            Delivery Service           =
-=======================================-->
-<!-- зміна: створено сторінку про доставку з повною інформацією -->
 <main>
   <section class="section">
     <div class="container">
       <div class="row justify-content-center">
-        <div class="col-lg-8">
-          <h1>Доставка з США - Швидко та Безпечно</h1>
+        <div class="col-lg-8 text-center mb-5">
+          <h1>Доставка Apple техніки з США</h1>
+          <p class="lead">Швидка та надійна доставка оригінальної техніки Apple в будь-яку точку України</p>
+        </div>
+      </div>
 
-          <div class="delivery-info mt-5">
-            <div class="row">
-              <div class="col-md-6 mb-4">
-                <div class="card h-100 border-0 shadow-sm">
-                  <div class="card-body text-center">
-                    <div class="icon-lg mb-3">🚚</div>
-                    <h4>Швидка доставка</h4>
-                    <p class="text-muted">
-                      5-7 робочих днів з моменту замовлення до отримання
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-6 mb-4">
-                <div class="card h-100 border-0 shadow-sm">
-                  <div class="card-body text-center">
-                    <div class="icon-lg mb-3">📦</div>
-                    <h4>Безпечна упаковка</h4>
-                    <p class="text-muted">
-                      Подвійна упаковка для захисту під час транспортування
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-6 mb-4">
-                <div class="card h-100 border-0 shadow-sm">
-                  <div class="card-body text-center">
-                    <div class="icon-lg mb-3">🔍</div>
-                    <h4>Відстеження</h4>
-                    <p class="text-muted">
-                      Повне відстеження посилки від США до вашого дому
-                    </p>
-                  </div>
-                </div>
-              </div>
-
-              <div class="col-md-6 mb-4">
-                <div class="card h-100 border-0 shadow-sm">
-                  <div class="card-body text-center">
-                    <div class="icon-lg mb-3">🏠</div>
-                    <h4>До дверей</h4>
-                    <p class="text-muted">
-                      Доставка безпосередньо до вашого дому або офісу
-                    </p>
-                  </div>
-                </div>
-              </div>
+      <div class="row">
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="card h-100 text-center">
+            <div class="card-body">
+              <div class="feature-icon mb-3" style="font-size: 3rem">🚀</div>
+              <h5>Експрес доставка</h5>
+              <p class="text-primary h5">3-5 днів</p>
+              <p class="text-muted">Швидка доставка для терміновіх замовлень</p>
+              <p class="h6">Вартість: 800 ₴</p>
             </div>
           </div>
+        </div>
 
-          <div class="mt-5">
-            <h3>Як працює доставка?</h3>
-            <div class="timeline mt-4">
-              <div class="timeline-item">
-                <div class="timeline-marker">1</div>
-                <div class="timeline-content">
-                  <h5>Замовлення</h5>
-                  <p>
-                    Ви залишаєте заявку на потрібну модель через сайт або
-                    телефон
-                  </p>
-                </div>
-              </div>
-
-              <div class="timeline-item">
-                <div class="timeline-marker">2</div>
-                <div class="timeline-content">
-                  <h5>Пошук товару</h5>
-                  <p>Наші партнери в США знаходять та перевіряють ваш товар</p>
-                </div>
-              </div>
-
-              <div class="timeline-item">
-                <div class="timeline-marker">3</div>
-                <div class="timeline-content">
-                  <h5>Відправка</h5>
-                  <p>
-                    Товар упаковується та відправляється через надійну
-                    логістичну компанію
-                  </p>
-                </div>
-              </div>
-
-              <div class="timeline-item">
-                <div class="timeline-marker">4</div>
-                <div class="timeline-content">
-                  <h5>Отримання</h5>
-                  <p>
-                    Ви отримуєте повідомлення про доставку та забираєте товар
-                  </p>
-                </div>
-              </div>
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="card h-100 text-center">
+            <div class="card-body">
+              <div class="feature-icon mb-3" style="font-size: 3rem">📦</div>
+              <h5>Стандартна доставка</h5>
+              <p class="text-primary h5">7-10 днів</p>
+              <p class="text-muted">Оптимальний варіант ціна/якість</p>
+              <p class="h6">Вартість: 500 ₴</p>
             </div>
           </div>
+        </div>
 
-          <div class="mt-5">
-            <h3>Вартість доставки</h3>
-            <div class="table-responsive">
-              <table class="table table-bordered">
-                <thead class="table-light">
-                  <tr>
-                    <th>Категорія товару</th>
-                    <th>Вартість доставки</th>
-                    <th>Час доставки</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>iPhone, AirPods</td>
-                    <td>$25</td>
-                    <td>5-7 днів</td>
-                  </tr>
-                  <tr>
-                    <td>iPad, Apple Watch</td>
-                    <td>$30</td>
-                    <td>5-7 днів</td>
-                  </tr>
-                  <tr>
-                    <td>MacBook</td>
-                    <td>$40</td>
-                    <td>7-10 днів</td>
-                  </tr>
-                </tbody>
-              </table>
+        <div class="col-md-6 col-lg-4 mb-4">
+          <div class="card h-100 text-center">
+            <div class="card-body">
+              <div class="feature-icon mb-3" style="font-size: 3rem">💰</div>
+              <h5>Економ доставка</h5>
+              <p class="text-primary h5">14-21 день</p>
+              <p class="text-muted">Найдешевший спосіб доставки</p>
+              <p class="h6">Вартість: 300 ₴</p>
             </div>
           </div>
+        </div>
+      </div>
 
-          <div class="mt-5 text-center">
-            <h3>Є питання про доставку?</h3>
-            <p class="lead">Зв'яжіться з нами для детальної консультації</p>
-            <a href="contact.html" class="btn btn-main-md">Зв'язатися з нами</a>
+      <div class="row">
+        <div class="col-12 text-center">
+          <div class="bg-light p-4 rounded">
+            <h4>Маєте запитання про доставку?</h4>
+            <p class="mb-3">Зв'яжіться з нами для уточнення деталей</p>
+            <a href="contact.html" class="btn btn-primary btn-lg">Зв'язатися</a>
           </div>
         </div>
       </div>
@@ -151,4 +63,5 @@
   </section>
 </main>
 
-@@include('blocks/footer.htm') @@include('footer.htm')
+@@include('blocks/footer.htm')
+@@include('footer.htm')
