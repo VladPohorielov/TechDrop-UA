@@ -1,0 +1,65 @@
+<!-- ========================================
+=       MacBook Product Card Component      =
+========================================= -->
+
+<div class="macbook-product-card">
+  <div class="card product-card-modern h-100 shadow-sm border-0">
+    <!-- Клікабельна область картки -->
+    <a href="@@detailLink" class="text-decoration-none text-dark card-link">
+      <!-- Зображення товару -->
+      <div class="card-img-wrapper position-relative overflow-hidden">
+        <img
+          src="@@src"
+          alt="@@alt"
+          class="card-img-top product-image"
+          loading="lazy"
+        />
+        <div class="product-badge">
+          <span class="badge bg-secondary">MacBook</span>
+        </div>
+      </div>
+
+      <!-- Інформація про товар -->
+      <div class="card-body d-flex flex-column">
+        <h5 class="card-title product-title fw-bold">@@title</h5>
+        <p class="card-text product-description text-muted small">
+          @@description
+        </p>
+
+        <!-- Ціна -->
+        <div class="product-price mb-3">
+          <span class="price-current h5 fw-bold text-primary">@@price ₴</span>
+          <span class="price-old text-muted text-decoration-line-through ms-2"
+            >@@oldPrice ₴</span
+          >
+        </div>
+
+        <!-- Статус наявності -->
+        <div class="product-status mb-3">
+          <span class="badge bg-success-subtle text-success">
+            <i class="fas fa-check-circle me-1"></i>В наявності
+          </span>
+        </div>
+      </div>
+    </a>
+
+    <!-- Кнопки дій -->
+    <div class="card-footer bg-transparent border-0 pt-0">
+      <div class="d-grid gap-2">
+        <a href="@@detailLink" class="btn btn-outline-primary">
+          <i class="fas fa-eye me-2"></i>Деталі
+        </a>
+        <button
+          class="btn btn-primary btn-order-now"
+          data-bs-toggle="modal"
+          data-bs-target="#macbookOrderModal"
+          data-product-title="@@title"
+          data-product-price="@@price"
+          data-product-image="@@src"
+        >
+          <i class="fas fa-shopping-cart me-2"></i>Оформити заявку
+        </button>
+      </div>
+    </div>
+  </div>
+</div>

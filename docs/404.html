@@ -7,56 +7,176 @@
  // GITHUB: https://github.com/themefisher/
 -->
 
-<html lang="en">
-<head>
-
-  <!-- Basic Page Needs
+<html lang="uk">
+  <head>
+    <!-- Basic Page Needs
   ================================================== -->
-  <meta charset="utf-8">
-  <title>AppleDrop</title>
+    <meta charset="utf-8" />
+    <title>
+      Купити iPhone з США | Доставка iPhone по Україні | TechDrop UA
+    </title>
 
-  <!-- Mobile Specific Metas
+    <!-- Mobile Specific Metas
   ================================================== -->
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="description" content="Bootstrap App Landing Template">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
-  <meta name="author" content="Themefisher">
-  <meta name="generator" content="Themefisher Small Apps Template v1.0">
-  
-  <!-- theme meta -->
-  <meta name="theme-name" content="small-apps" />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="description"
+      content="Купити оригінальний iPhone з США з доставкою по Україні. До 30% дешевше ніж в магазинах. Оплата при отриманні. Гарантія якості."
+    />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=5.0"
+    />
+    <meta name="author" content="TechDrop UA" />
+    <meta
+      name="keywords"
+      content="iPhone, купити iPhone, iPhone з США, доставка iPhone Україна, оригінальний iPhone"
+    />
+    <meta name="generator" content="TechDrop UA iPhone Delivery Service" />
 
-  <!-- Favicon -->
-  <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
-  
-  <!-- PLUGINS CSS STYLE -->
-  <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css">
-  <link rel="stylesheet" href="plugins/themify-icons/themify-icons.css">
-  <link rel="stylesheet" href="plugins/slick/slick.css">
-  <link rel="stylesheet" href="plugins/slick/slick-theme.css">
-  <link rel="stylesheet" href="plugins/fancybox/jquery.fancybox.min.css">
-  <link rel="stylesheet" href="plugins/aos/aos.css">
+    <!-- theme meta -->
+    <meta name="theme-name" content="small-apps" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
 
-  <!-- CUSTOM CSS -->
-  <link href="css/style.css" rel="stylesheet">
+    <!-- Favicon -->
+    <link rel="shortcut icon" type="image/x-icon" href="images/favicon.png" />
 
-</head>
+    <!-- PLUGINS CSS STYLE -->
+    <link rel="stylesheet" href="plugins/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="plugins/themify-icons/themify-icons.css" />
+    <link rel="stylesheet" href="plugins/slick/slick.css" />
+    <link rel="stylesheet" href="plugins/slick/slick-theme.css" />
+    <link rel="stylesheet" href="plugins/fancybox/jquery.fancybox.min.css" />
+    <link rel="stylesheet" href="plugins/aos/aos.css" />
 
-<body class="body-wrapper" data-spy="scroll" data-target=".privacy-nav">
+    <!-- CUSTOM CSS -->
+    <link href="css/style.css" rel="stylesheet" />
+  </head>
+
+  <body
+    class="body-wrapper"
+    data-spy="scroll"
+    data-target=".privacy-nav"
+  ></body>
+</html>
 
 
-<section class="error-page">
-	<div class="center">
-		<div class="block text-center">
-			<h1>404</h1>
-			<h3>Page Not Found</h3>
-			<p>The link you clicked may be broken or the
-				<br>page may have been removed.</p>
-			<a href="index.html" class="btn btn-main-md">visit homepage</a>
-		</div>
-	</div>
+<section class="error-page section">
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-lg-6 col-md-8 text-center">
+        <div class="error-content">
+          <div class="error-number mb-4">
+            <h1 class="display-1 text-primary font-weight-bold">404</h1>
+          </div>
+          <div class="error-message">
+            <h2 class="mb-3">Ой, такої сторінки не існує 📱</h2>
+            <p class="text-muted mb-4">
+              Схоже, що ви потрапили не туди. Можливо, посилання застаріло або
+              сторінка була переміщена. Не хвилюйтесь — поверніться до магазину
+              і знайдіть свій ідеальний iPhone!
+            </p>
+            <div class="error-actions">
+              <a href="index.html" class="btn btn-main-md mr-3 mb-2">
+                🏠 На головну
+              </a>
+              <a href="contact.html" class="btn btn-outline-primary mb-2">
+                📞 Зв'язатися з нами
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
 </section>
+
+<style>
+  .error-page {
+    min-height: 70vh;
+    display: flex;
+    align-items: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+  }
+
+  .error-content {
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 3rem;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    transition: all 0.3s ease;
+  }
+
+  .error-content:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+  }
+
+  .error-number h1 {
+    font-size: 6rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.3);
+    animation: pulse 2s infinite;
+  }
+
+  @keyframes pulse {
+    0% {
+      transform: scale(1);
+    }
+    50% {
+      transform: scale(1.05);
+    }
+    100% {
+      transform: scale(1);
+    }
+  }
+
+  .error-message h2 {
+    color: white;
+    font-weight: 600;
+  }
+
+  .error-actions .btn {
+    transition: all 0.3s ease;
+    border-radius: 25px;
+    padding: 12px 24px;
+  }
+
+  .error-actions .btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  }
+
+  .btn-outline-primary {
+    border-color: white;
+    color: white;
+  }
+
+  .btn-outline-primary:hover {
+    background-color: white;
+    color: #667eea;
+  }
+
+  @media (max-width: 768px) {
+    .error-content {
+      padding: 2rem;
+    }
+
+    .error-number h1 {
+      font-size: 4rem;
+    }
+
+    .error-actions .btn {
+      display: block;
+      width: 100%;
+      margin-bottom: 10px;
+    }
+  }
+</style>
 
 
   <!-- To Top -->
