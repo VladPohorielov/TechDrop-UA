@@ -1,15 +1,390 @@
-@@include('header.htm') @@include('blocks/navigation.htm', {"pages":"active", "iphone":"active"}) @@include('blocks/page-title.htm', {"title":"iPhone з США", "description":"Оригінальні iPhone з Америки з доставкою по Україні"})
+@@include('header.htm')
+<style>
+  /* Сучасні стилі для iPhone сторінки */
+  .product-card {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 15px !important;
+    overflow: hidden;
+    background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  }
+
+  .product-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1) !important;
+  }
+
+  .product-card .card-img-top {
+    background: linear-gradient(135deg, #f1f3f4 0%, #ffffff 100%);
+    border-radius: 12px;
+    margin: 15px;
+    padding: 20px !important;
+  }
+
+  .product-card img {
+    transition: transform 0.3s ease;
+    filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.1));
+  }
+
+  .product-card:hover img {
+    transform: scale(1.05);
+  }
+
+  .card-title {
+    font-weight: 600;
+    color: #1a1a1a;
+    margin-bottom: 8px;
+  }
+
+  .text-primary {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    font-weight: 700;
+  }
+
+  .btn-main-md {
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    border: none;
+    border-radius: 25px;
+    padding: 12px 30px;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    transition: all 0.3s ease;
+  }
+
+  .btn-main-md:hover {
+    background: linear-gradient(135deg, #0056b3, #004085);
+    transform: translateY(-2px);
+    box-shadow: 0 10px 25px rgba(0, 123, 255, 0.3);
+  }
+
+  .page-title {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  }
+
+  section h1,
+  section h2 {
+    position: relative;
+    margin-bottom: 30px;
+  }
+
+  section h2::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80px;
+    height: 3px;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    border-radius: 2px;
+  }
+
+  .bg-primary {
+    background: linear-gradient(135deg, #007bff, #0056b3) !important;
+    border-radius: 20px !important;
+  }
+
+  .lead {
+    font-size: 1.1rem;
+    line-height: 1.6;
+    color: #666;
+  }
+
+  .card-text {
+    line-height: 1.5;
+  }
+
+  /* Анімація завантаження для картинок */
+  .product-card img {
+    opacity: 0;
+    animation: fadeInUp 0.6s ease forwards;
+  }
+
+  @keyframes fadeInUp {
+    from {
+      opacity: 0;
+      transform: translateY(30px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .product-card:nth-child(1) img {
+    animation-delay: 0.1s;
+  }
+  .product-card:nth-child(2) img {
+    animation-delay: 0.2s;
+  }
+  .product-card:nth-child(3) img {
+    animation-delay: 0.3s;
+  }
+  .product-card:nth-child(4) img {
+    animation-delay: 0.4s;
+  }
+
+  /* Hero Stats Section */
+  .hero-stats-container {
+    position: relative;
+    padding: 40px 0;
+  }
+
+  .main-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-bottom: 30px;
+  }
+
+  /* Typewriter Effect */
+  .typewriter-text {
+    overflow: hidden;
+    border-right: 3px solid #667eea;
+    white-space: nowrap;
+    animation: typing 3s steps(40, end), blink-caret 0.75s step-end infinite;
+  }
+
+  @keyframes typing {
+    from {
+      width: 0;
+    }
+    to {
+      width: 100%;
+    }
+  }
+
+  @keyframes blink-caret {
+    from,
+    to {
+      border-color: transparent;
+    }
+    50% {
+      border-color: #667eea;
+    }
+  }
+
+  /* Stats Cards */
+  .stat-card {
+    background: white;
+    border-radius: 20px;
+    padding: 25px 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border: 2px solid transparent;
+    position: relative;
+    overflow: hidden;
+  }
+
+  .stat-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+    border-color: #667eea;
+  }
+
+  .stat-card::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(
+      90deg,
+      transparent,
+      rgba(255, 255, 255, 0.4),
+      transparent
+    );
+    transition: left 0.5s;
+  }
+
+  .stat-card:hover::before {
+    left: 100%;
+  }
+
+  .stat-icon {
+    font-size: 2.5rem;
+    margin-bottom: 15px;
+    filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.2));
+  }
+
+  .stat-number {
+    font-size: 2.8rem;
+    font-weight: 800;
+    color: #667eea;
+    margin-bottom: 8px;
+    line-height: 1;
+  }
+
+  .stat-label {
+    font-size: 0.95rem;
+    color: #666;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+  }
+
+  /* Floating Features */
+  .floating-features {
+    position: relative;
+    height: 100px;
+    margin-top: 40px;
+  }
+
+  .feature-badge {
+    position: absolute;
+    background: linear-gradient(135deg, #667eea, #764ba2);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 25px;
+    font-size: 0.9rem;
+    font-weight: 600;
+    box-shadow: 0 8px 25px rgba(102, 126, 234, 0.3);
+    animation: float 3s ease-in-out infinite;
+    white-space: nowrap;
+  }
+
+  .feature-badge i {
+    margin-right: 8px;
+    font-size: 1.1rem;
+  }
+
+  .badge-1 {
+    top: 0;
+    left: 10%;
+    animation-delay: 0s;
+  }
+
+  .badge-2 {
+    top: 20px;
+    right: 15%;
+    animation-delay: 0.5s;
+  }
+
+  .badge-3 {
+    top: 40px;
+    left: 20%;
+    animation-delay: 1s;
+  }
+
+  .badge-4 {
+    top: 10px;
+    right: 5%;
+    animation-delay: 1.5s;
+  }
+
+  @keyframes float {
+    0%,
+    100% {
+      transform: translateY(0px);
+    }
+    50% {
+      transform: translateY(-15px);
+    }
+  }
+
+  /* Responsive adjustments */
+  @media (max-width: 768px) {
+    .main-title {
+      font-size: 1.8rem;
+    }
+
+    .floating-features {
+      height: 60px;
+      overflow: hidden;
+    }
+
+    .feature-badge {
+      position: relative;
+      display: inline-block;
+      margin: 5px;
+      animation: none;
+    }
+
+    .typewriter-text {
+      animation: none;
+      border-right: none;
+    }
+
+    .stat-number {
+      font-size: 2.2rem;
+    }
+
+    .stat-icon {
+      font-size: 2rem;
+    }
+  }
+</style>
+
+@@include('blocks/navigation.htm', {"pages":"active", "iphone":"active"})
+@@include('blocks/page-title.htm', {"title":"iPhone з США",
+"description":"Оригінальні iPhone з Америки з доставкою по Україні"})
 
 <main>
   <section class="section">
     <div class="container">
-      <div class="row justify-content-center">
-        <div class="col-lg-10 text-center mb-5">
-          <h1>iPhone з США - Оригінальні та Перевірені</h1>
-          <p class="lead">
-            Широкий вибір iPhone від 11 до 16 Pro Max. Пряма доставка з Америки
-            за 5-7 днів. Оплата при отриманні.
-          </p>
+      <!-- Hero Stats Section -->
+      <div class="row justify-content-center mb-5">
+        <div class="col-lg-12">
+          <div class="hero-stats-container text-center">
+            <h1 class="main-title mb-4">
+              <span class="typewriter-text"
+                >iPhone з США - Оригінальні та Перевірені</span
+              >
+            </h1>
+
+            <!-- Animated Stats -->
+            <div class="row stats-row mb-4">
+              <div class="col-md-3 col-6 mb-3">
+                <div class="stat-card">
+                  <div class="stat-icon">🚚</div>
+                  <div class="stat-number" data-target="5">0</div>
+                  <div class="stat-label">днів доставка</div>
+                </div>
+              </div>
+              <div class="col-md-3 col-6 mb-3">
+                <div class="stat-card">
+                  <div class="stat-icon">📱</div>
+                  <div class="stat-number" data-target="2500">0</div>
+                  <div class="stat-label">задоволених клієнтів</div>
+                </div>
+              </div>
+              <div class="col-md-3 col-6 mb-3">
+                <div class="stat-card">
+                  <div class="stat-icon">✅</div>
+                  <div class="stat-number" data-target="100">0</div>
+                  <div class="stat-label">% оригінальність</div>
+                </div>
+              </div>
+              <div class="col-md-3 col-6 mb-3">
+                <div class="stat-card">
+                  <div class="stat-icon">🛡️</div>
+                  <div class="stat-number" data-target="12">0</div>
+                  <div class="stat-label">місяців гарантія</div>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating Features -->
+            <div class="floating-features">
+              <div class="feature-badge badge-1">
+                <i class="ti-check"></i> Оплата при отриманні
+              </div>
+              <div class="feature-badge badge-2">
+                <i class="ti-shield"></i> Перевірка стану
+              </div>
+              <div class="feature-badge badge-3">
+                <i class="ti-truck"></i> Експрес доставка
+              </div>
+              <div class="feature-badge badge-4">
+                <i class="ti-headphone-alt"></i> Підтримка 24/7
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
@@ -241,7 +616,7 @@
           <div class="card product-card h-100 text-center shadow-sm border-0">
             <div class="card-img-top p-3">
               <img
-                src="images/iphone/14-pro-max.png"
+                src="images/iphone/14 _pro_max.png"
                 alt="iPhone 14 Pro Max з США"
                 class="img-fluid"
                 style="max-height: 200px"
@@ -266,7 +641,7 @@
           <div class="card product-card h-100 text-center shadow-sm border-0">
             <div class="card-img-top p-3">
               <img
-                src="images/iphone/14-pro.png"
+                src="images/iphone/14_pro.png"
                 alt="iPhone 14 Pro з США"
                 class="img-fluid"
                 style="max-height: 200px"
@@ -291,7 +666,7 @@
           <div class="card product-card h-100 text-center shadow-sm border-0">
             <div class="card-img-top p-3">
               <img
-                src="images/iphone/14-plus.png"
+                src="images/iphone/14_plus.png"
                 alt="iPhone 14 Plus з США"
                 class="img-fluid"
                 style="max-height: 200px"
@@ -350,7 +725,7 @@
           <div class="card product-card h-100 text-center shadow-sm border-0">
             <div class="card-img-top p-3">
               <img
-                src="images/iphone/13-pro-max.png"
+                src="images/iphone/13_pro_max.png"
                 alt="iPhone 13 Pro Max з США"
                 class="img-fluid"
                 style="max-height: 200px"
@@ -400,7 +775,7 @@
           <div class="card product-card h-100 text-center shadow-sm border-0">
             <div class="card-img-top p-3">
               <img
-                src="images/iphone/13-mini.png"
+                src="images/iphone/13mini.png"
                 alt="iPhone 13 mini з США"
                 class="img-fluid"
                 style="max-height: 200px"
@@ -434,7 +809,7 @@
           <div class="card product-card h-100 text-center shadow-sm border-0">
             <div class="card-img-top p-3">
               <img
-                src="images/iphone/12-pro-max.png"
+                src="images/iphone/12_pro_max.png"
                 alt="iPhone 12 Pro Max з США"
                 class="img-fluid"
                 style="max-height: 200px"
@@ -482,7 +857,7 @@
           <div class="card product-card h-100 text-center shadow-sm border-0">
             <div class="card-img-top p-3">
               <img
-                src="images/iphone/11-pro-max.png"
+                src="images/iphone/11pro.png"
                 alt="iPhone 11 Pro Max з США"
                 class="img-fluid"
                 style="max-height: 200px"
@@ -547,5 +922,101 @@
     </div>
   </section>
 </main>
+
+<script>
+  // Додатковий JavaScript для покращення UX
+  document.addEventListener("DOMContentLoaded", function () {
+    // Lazy loading для картинок
+    const images = document.querySelectorAll(".product-card img");
+
+    const imageObserver = new IntersectionObserver((entries, observer) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          img.style.opacity = "1";
+          observer.unobserve(img);
+        }
+      });
+    });
+
+    images.forEach((img) => {
+      imageObserver.observe(img);
+    });
+
+    // Плавна прокрутка до секцій
+    document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+      anchor.addEventListener("click", function (e) {
+        e.preventDefault();
+        const target = document.querySelector(this.getAttribute("href"));
+        if (target) {
+          target.scrollIntoView({
+            behavior: "smooth",
+            block: "start",
+          });
+        }
+      });
+    });
+
+    // Анімація з'явлення карток при скролі
+    const cards = document.querySelectorAll(".product-card");
+    const cardObserver = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.style.opacity = "1";
+            entry.target.style.transform = "translateY(0)";
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    cards.forEach((card) => {
+      card.style.opacity = "0";
+      card.style.transform = "translateY(50px)";
+      card.style.transition = "opacity 0.6s ease, transform 0.6s ease";
+      cardObserver.observe(card);
+    });
+
+    // Анімація лічильників
+    function animateCounters() {
+      const counters = document.querySelectorAll(".stat-number");
+
+      const counterObserver = new IntersectionObserver(
+        (entries) => {
+          entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+              const counter = entry.target;
+              const target = parseInt(counter.getAttribute("data-target"));
+              let count = 0;
+              const increment = target / 60; // Швидкість анімації
+
+              const updateCounter = () => {
+                if (count < target) {
+                  count += increment;
+                  counter.textContent = Math.floor(count);
+                  requestAnimationFrame(updateCounter);
+                } else {
+                  counter.textContent = target;
+                }
+              };
+
+              updateCounter();
+              counterObserver.unobserve(counter);
+            }
+          });
+        },
+        { threshold: 0.5 }
+      );
+
+      counters.forEach((counter) => {
+        counterObserver.observe(counter);
+      });
+    }
+
+    // Запуск анімації лічильників
+    animateCounters();
+  });
+</script>
 
 @@include('blocks/footer.htm') @@include('footer.htm')

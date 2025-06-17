@@ -1,268 +1,428 @@
 <!DOCTYPE html>
 <html lang="uk">
 <head>
-    <meta charset="utf-8">
-    <title>iPhone 16 Pro - купити з США | TechDrop UA</title>
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
-    <meta name="description" content="iPhone 16 Pro з США ⭐ Оригінал, перевірений, 48999₴ ✓ Гарантія ✓ Доставка по Україні за 5-7 днів ✓ Оплата при отриманні">
-    <meta name="keywords" content="iPhone 16 Pro купити, iPhone 16 Pro Україна, iPhone 16 Pro з США, iPhone доставка">
+    <meta charset="utf-8" />
+    <title>iPhone 16 Pro з США | TechDrop UA - Оригінал з Америки</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="iPhone 16 Pro з США - оригінал з Америки. Компактний Pro iPhone з усією потужністю A18 Pro чіпа та професійними можливостями камери. Доставка за 5-7 днів. Оплата при отриманні." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link rel="stylesheet" href="../../plugins/themify-icons/themify-icons.css">
-    <link rel="stylesheet" href="../../plugins/animate-css/animate.css">
-    <link rel="stylesheet" href="../../plugins/aos/aos.css">
-    <link rel="stylesheet" href="../../plugins/ekko-lightbox/dist/ekko-lightbox.css">
-    <link rel="stylesheet" href="../../css/style.css">
-    <link rel="stylesheet" href="../../css/responsive.css">
-    <link rel="icon" href="../../images/favicon.png" type="image/x-icon">
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../plugins/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../plugins/themify-icons/themify-icons.css" />
+    <link rel="stylesheet" href="../../plugins/slick/slick.css" />
+    <link rel="stylesheet" href="../../plugins/slick/slick-theme.css" />
+    <link rel="stylesheet" href="../../plugins/fancybox/jquery.fancybox.min.css" />
+    <link href="../../css/style.css" rel="stylesheet" />
+    
+    <style>
+        .product-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 60px 0;
+            color: white;
+        }
+        
+        .product-gallery {
+            text-align: center;
+        }
+        
+        .main-product-image {
+            max-width: 400px;
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 20px 40px rgba(0,0,0,0.3));
+            transition: transform 0.3s ease;
+        }
+        
+        .main-product-image:hover {
+            transform: scale(1.05);
+        }
+        
+        .product-info {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            margin-top: -50px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .price-tag {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
+        
+        .feature-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin: 5px;
+            font-weight: 600;
+        }
+        
+        .spec-table {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+        
+        .spec-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .spec-row:last-child {
+            border-bottom: none;
+        }
+        
+        .spec-label {
+            font-weight: 600;
+            color: #495057;
+        }
+        
+        .spec-value {
+            color: #667eea;
+            font-weight: 500;
+        }
+        
+        .btn-buy {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(40, 167, 69, 0.3);
+        }
+        
+        .btn-buy:hover {
+            background: linear-gradient(135deg, #20c997, #28a745);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(40, 167, 69, 0.4);
+            color: white;
+        }
+        
+        .benefits-section {
+            background: #f8f9fa;
+            padding: 60px 0;
+            margin: 60px 0;
+            border-radius: 20px;
+        }
+        
+        .benefit-card {
+            text-align: center;
+            padding: 30px 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin: 15px 0;
+            transition: transform 0.3s ease;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .breadcrumb-nav {
+            background: transparent;
+            padding: 20px 0;
+        }
+        
+        .breadcrumb {
+            background: transparent;
+            padding: 0;
+        }
+        
+        .breadcrumb-item a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        .breadcrumb-item.active {
+            color: #6c757d;
+        }
+    </style>
 </head>
 
-<body id="body">
-
-<!-- Navigation -->
-<nav class="navbar navbar-expand-lg main-nav" id="navbar">
-    <div class="container">
-        <a class="navbar-brand" href="../../index.html">
-            <img src="../../images/logo.png" alt="TechDrop UA" class="img-fluid">
-        </a>
-        <button class="navbar-toggler collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="ti-menu"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="../../index.html">Головна</a>
-                </li>
-                <li class="nav-item dropdown active">
-                    <a class="nav-link dropdown-toggle" href="#" data-bs-toggle="dropdown">Каталог <span><i class="ti-angle-down"></i></span></a>
-                    <ul class="dropdown-menu">
-                        <li><a class="dropdown-item active" href="../../iphone.html">iPhone</a></li>
-                        <li><a class="dropdown-item" href="../../macbook.html">MacBook</a></li>
-                        <li><a class="dropdown-item" href="../../ipad.html">iPad</a></li>
-                        <li><a class="dropdown-item" href="../../watch.html">Apple Watch</a></li>
-                        <li><a class="dropdown-item" href="../../airpods.html">AirPods</a></li>
-                    </ul>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../../about.html">Про нас</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="../../contact.html">Контакти</a>
-                </li>
-            </ul>
-        </div>
-    </div>
-</nav>
-
-<!-- Product Detail Section -->
-<section class="section product-detail pt-5">
-    <div class="container">
-        <!-- Breadcrumb -->
-        <nav aria-label="breadcrumb" class="mb-4">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="../../index.html">Головна</a></li>
-                <li class="breadcrumb-item"><a href="../../iphone.html">iPhone</a></li>
-                <li class="breadcrumb-item active">iPhone 16 Pro</li>
-            </ol>
-        </nav>
-
-        <div class="row">
-            <!-- Product Images -->
-            <div class="col-lg-6">
-                <div class="product-image-gallery">
-                    <div class="main-image mb-3">
-                        <img src="../../images/iphone/16 pro.png" alt="iPhone 16 Pro" class="img-fluid rounded" id="mainProductImage">
-                    </div>
-                </div>
-            </div>
-
-            <!-- Product Info -->
-            <div class="col-lg-6">
-                <div class="product-info">
-                    <h1 class="product-title">iPhone 16 Pro</h1>
-                    <p class="product-description lead">Професійний iPhone з чіпом A18 Pro, titanium корпусом та камерами про-рівня в компактному розмірі.</p>
-                    
-                    <div class="product-pricing mb-4">
-                        <span class="current-price h3 text-primary">48,999 ₴</span>
-                        <span class="old-price h5 text-muted text-decoration-line-through ms-2">53,999 ₴</span>
-                        <span class="savings badge bg-success ms-2">Економія: 5,000 ₴</span>
-                    </div>
-
-                    <!-- Key Features -->
-                    <div class="key-features mb-4">
-                        <h4>Ключові особливості:</h4>
-                        <ul class="list-unstyled">
-                            <li><i class="ti-check text-success me-2"></i>Чіп A18 Pro з Neural Engine</li>
-                            <li><i class="ti-check text-success me-2"></i>Камера 48MP з 3x оптичним зумом</li>
-                            <li><i class="ti-check text-success me-2"></i>Дисплей Super Retina XDR 6.3"</li>
-                            <li><i class="ti-check text-success me-2"></i>Корпус з титану Deep Purple</li>
-                            <li><i class="ti-check text-success me-2"></i>До 27 годин відтворення відео</li>
-                        </ul>
-                    </div>
-
-                    <!-- Order Form -->
-                    <div class="order-form">
-                        <button class="btn btn-primary btn-lg w-100 mb-3" data-bs-toggle="modal" data-bs-target="#orderModal" data-product="iPhone 16 Pro" data-price="48999">
-                            <i class="ti-shopping-cart me-2"></i>Замовити зараз
-                        </button>
-                        <p class="text-muted text-center"><i class="ti-truck me-1"></i>Доставка 5-7 днів | <i class="ti-credit-card me-1"></i>Оплата при отриманні</p>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Product Specifications -->
-        <div class="row mt-5">
-            <div class="col-12">
-                <ul class="nav nav-tabs" role="tablist">
+<body class="body-wrapper">
+    <!-- Navigation -->
+    <nav class="navbar main-nav navbar-expand-lg px-2 px-sm-0 py-2 py-lg-0">
+        <div class="container">
+            <a class="navbar-brand" href="../../index.html">
+                <img src="../../images/Logo.png" alt="TechDrop UA Logo" />
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="ti-menu"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
                     <li class="nav-item">
-                        <a class="nav-link active" data-bs-toggle="tab" href="#specifications">Характеристики</a>
+                        <a class="nav-link" href="../../index.html">Головна</a>
+                    </li>
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+                            Каталог <span><i class="ti-angle-down"></i></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item active" href="../../iphone.html">iPhone</a></li>
+                            <li><a class="dropdown-item" href="../../macbook.html">MacBook</a></li>
+                            <li><a class="dropdown-item" href="../../ipad.html">iPad</a></li>
+                            <li><a class="dropdown-item" href="../../watch.html">Apple Watch</a></li>
+                            <li><a class="dropdown-item" href="../../airpods.html">AirPods</a></li>
+                        </ul>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" data-bs-toggle="tab" href="#package">Комплектація</a>
+                        <a class="nav-link" href="../../about.html">Про нас</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../contact.html">Контакти</a>
                     </li>
                 </ul>
+            </div>
+        </div>
+    </nav>
 
-                <div class="tab-content mt-3">
-                    <div class="tab-pane active" id="specifications">
-                        <div class="table-responsive">
-                            <table class="table table-striped">
-                                <tr><td class="fw-semibold">Дисплей</td><td>6.3" Super Retina XDR OLED, 2556×1179, 460 ppi</td></tr>
-                                <tr><td class="fw-semibold">Чіп</td><td>A18 Pro з 6-ядерним CPU, 6-ядерним GPU</td></tr>
-                                <tr><td class="fw-semibold">Пам'ять</td><td>256GB внутрішньої пам'яті</td></tr>
-                                <tr><td class="fw-semibold">Камера</td><td>48MP основна, 48MP Ultra Wide, 12MP телефото (3x)</td></tr>
-                                <tr><td class="fw-semibold">Фронтальна камера</td><td>12MP TrueDepth з Face ID</td></tr>
-                                <tr><td class="fw-semibold">Батарея</td><td>До 27 годин відтворення відео</td></tr>
-                                <tr><td class="fw-semibold">Операційна система</td><td>iOS 18</td></tr>
-                                <tr><td class="fw-semibold">Матеріал корпусу</td><td>Титан 5 класу</td></tr>
-                                <tr><td class="fw-semibold">Водостійкість</td><td>IP68 (до 6 метрів на 30 хвилин)</td></tr>
-                                <tr><td class="fw-semibold">Підключення</td><td>5G, Wi-Fi 7, Bluetooth 5.3, USB-C</td></tr>
-                                <tr><td class="fw-semibold">Розміри</td><td>149.6 × 71.5 × 8.25 мм</td></tr>
-                                <tr><td class="fw-semibold">Вага</td><td>199 грамів</td></tr>
-                            </table>
+    <!-- Breadcrumb -->
+    <div class="breadcrumb-nav">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="../../index.html">Головна</a></li>
+                    <li class="breadcrumb-item"><a href="../../iphone.html">iPhone</a></li>
+                    <li class="breadcrumb-item active">iPhone 16 Pro</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Product Hero Section -->
+    <section class="product-hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="product-gallery">
+                        <img src="../../images/iphone/16 pro.png" alt="iPhone 16 Pro" class="main-product-image" />
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="product-info">
+                        <h1 class="mb-3">iPhone 16 Pro</h1>
+                        <div class="price-tag">від 52,999 ₴</div>
+                        
+                        <div class="mb-4">
+                            <span class="feature-badge">🇺🇸 Оригінал з США</span>
+                            <span class="feature-badge">📱 A18 Pro чіп</span>
+                            <span class="feature-badge">📸 48MP камера</span>
+                            <span class="feature-badge">🛡️ Титановий корпус</span>
+                        </div>
+                        
+                        <p class="lead mb-4">
+                            Компактний Pro iPhone з усією потужністю A18 Pro чіпа та професійними можливостями камери. Оригінальний iPhone з Америки з гарантією якості.
+                        </p>
+                        
+                        <div class="d-flex gap-3 mb-4">
+                            <button class="btn btn-buy flex-fill">
+                                <i class="ti-shopping-cart"></i> Замовити зараз
+                            </button>
+                            <a href="../../contact.html" class="btn btn-outline-light flex-fill">
+                                <i class="ti-headphone-alt"></i> Консультація
+                            </a>
+                        </div>
+                        
+                        <small class="text-muted">
+                            <i class="ti-truck"></i> Доставка 5-7 днів | 
+                            <i class="ti-credit-card"></i> Оплата при отриманні
+                        </small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Specifications -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="text-center mb-5">Технічні характеристики</h2>
+                    
+                    <div class="spec-table">
+                        <div class="spec-row">
+                            <span class="spec-label">Дисплей</span>
+                            <span class="spec-value">6.3" Super Retina XDR OLED</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Процесор</span>
+                            <span class="spec-value">A18 Pro чіп</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Основна камера</span>
+                            <span class="spec-value">48MP Fusion + 48MP Ultra Wide + 12MP Telephoto</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Фронтальна камера</span>
+                            <span class="spec-value">12MP TrueDepth</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Пам'ять</span>
+                            <span class="spec-value">128GB / 256GB / 512GB / 1TB</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Оперативна пам'ять</span>
+                            <span class="spec-value">8GB RAM</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Батарея</span>
+                            <span class="spec-value">До 27 годин відео</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Матеріал</span>
+                            <span class="spec-value">Титановий корпус</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Водостійкість</span>
+                            <span class="spec-value">IP68</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Зарядка</span>
+                            <span class="spec-value">USB-C, MagSafe, Qi</span>
                         </div>
                     </div>
-                    <div class="tab-pane" id="package">
-                        <ul class="list-unstyled">
-                            <li><i class="fas fa-mobile-alt text-primary me-2"></i>iPhone 16 Pro</li>
-                            <li><i class="fas fa-plug text-primary me-2"></i>Кабель USB-C для зарядки (1 м)</li>
-                            <li><i class="fas fa-file-alt text-primary me-2"></i>Документація</li>
-                            <li><i class="fas fa-sticker text-primary me-2"></i>Apple стікери</li>
-                        </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="benefits-section">
+        <div class="container">
+            <h2 class="text-center mb-5">Чому варто обрати нас?</h2>
+            <div class="row">
+                <div class="col-md-3">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🇺🇸</div>
+                        <h5>100% Оригінал</h5>
+                        <p>Пряма поставка з офіційних магазинів США</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🚚</div>
+                        <h5>Швидка доставка</h5>
+                        <p>5-7 днів до вашого міста по всій Україні</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">💳</div>
+                        <h5>Оплата при отриманні</h5>
+                        <p>Перевіряйте товар перед оплатою</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🛡️</div>
+                        <h5>Гарантія якості</h5>
+                        <p>12 місяців офіційної гарантії</p>
                     </div>
                 </div>
             </div>
         </div>
-    </div>
-</section>
+    </section>
 
-<!-- Order Modal -->
-<div class="modal fade" id="orderModal" tabindex="-1">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <h5 class="modal-title">Замовлення</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal"></button>
-            </div>
-            <div class="modal-body">
-                <form id="orderForm">
-                    <div class="mb-3">
-                        <label class="form-label">Товар:</label>
-                        <input type="text" class="form-control" id="productName" readonly>
+    <!-- CTA Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <div class="bg-primary text-white p-5 rounded">
+                        <h3>Готові замовити iPhone 16 Pro?</h3>
+                        <p class="mb-4">Зв'яжіться з нами зараз і отримайте персональну консультацію</p>
+                        <div class="d-flex justify-content-center gap-3 flex-wrap">
+                            <a href="../../contact.html" class="btn btn-light btn-lg">
+                                <i class="ti-phone"></i> Зателефонувати
+                            </a>
+                            <a href="https://t.me/techdropua" class="btn btn-outline-light btn-lg" target="_blank">
+                                <i class="ti-comments"></i> Telegram
+                            </a>
+                        </div>
                     </div>
-                    <div class="mb-3">
-                        <label class="form-label">Ціна:</label>
-                        <input type="text" class="form-control" id="productPrice" readonly>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Ваше ім'я *</label>
-                        <input type="text" class="form-control" required>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Телефон *</label>
-                        <input type="tel" class="form-control" required>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Місто доставки *</label>
-                        <input type="text" class="form-control" required>
-                    </div>
-                    <div class="mb-3">
-                        <label class="form-label">Коментар</label>
-                        <textarea class="form-control" rows="3"></textarea>
-                    </div>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Скасувати</button>
-                <button type="button" class="btn btn-primary">Оформити замовлення</button>
-            </div>
-        </div>
-    </div>
-</div>
-
-<!-- Footer -->
-<footer class="footer section bg-dark">
-    <div class="container">
-        <div class="row">
-            <div class="col-lg-4 col-md-6">
-                <div class="footer-widget">
-                    <img src="../../images/logo-white.png" alt="TechDrop UA" class="img-fluid mb-3">
-                    <p>Доставляємо оригінальні Apple продукти з США прямо до ваших рук. Швидко, надійно, з гарантією якості.</p>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="footer-widget">
-                    <h4 class="widget-title">Каталог</h4>
-                    <ul class="footer-links">
-                        <li><a href="../../iphone.html">iPhone</a></li>
-                        <li><a href="../../macbook.html">MacBook</a></li>
-                        <li><a href="../../ipad.html">iPad</a></li>
-                        <li><a href="../../watch.html">Apple Watch</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-3 col-md-6">
-                <div class="footer-widget">
-                    <h4 class="widget-title">Інформація</h4>
-                    <ul class="footer-links">
-                        <li><a href="../../about.html">Про нас</a></li>
-                        <li><a href="../../contact.html">Контакти</a></li>
-                        <li><a href="../../delivery.html">Доставка</a></li>
-                    </ul>
-                </div>
-            </div>
-            <div class="col-lg-2 col-md-6">
-                <div class="footer-widget">
-                    <h4 class="widget-title">Контакти</h4>
-                    <p>📱 +380 XX XXX XXXX<br>📧 info@techdrop.ua</p>
                 </div>
             </div>
         </div>
-        <div class="row mt-4 pt-4 border-top">
-            <div class="col-12 text-center">
-                <p>&copy; 2024 TechDrop UA. Всі права захищені.</p>
+    </section>
+
+    <!-- Footer -->
+    <footer class="section footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <h5>TechDrop UA</h5>
+                    <p>Оригінальні iPhone з США з доставкою по Україні</p>
+                </div>
+                <div class="col-lg-4">
+                    <h5>Контакти</h5>
+                    <p>Telegram: @techdropua<br>Email: info@techdrop.ua</p>
+                </div>
+                <div class="col-lg-4">
+                    <h5>Графік роботи</h5>
+                    <p>Пн-Пт: 9:00-18:00<br>Сб-Нд: 10:00-16:00</p>
+                </div>
             </div>
         </div>
-    </div>
-</footer>
+    </footer>
 
-<!-- Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-<script>
-// Modal product info population
-document.addEventListener('DOMContentLoaded', function() {
-    const orderModal = document.getElementById('orderModal');
-    orderModal.addEventListener('show.bs.modal', function(event) {
-        const button = event.relatedTarget;
-        const product = button.getAttribute('data-product');
-        const price = button.getAttribute('data-price');
-        
-        document.getElementById('productName').value = product;
-        document.getElementById('productPrice').value = price + ' ₴';
-    });
-});
-</script>
-
+    <!-- Scripts -->
+    <script src="../../plugins/jquery/jquery.min.js"></script>
+    <script src="../../plugins/bootstrap/bootstrap.min.js"></script>
+    <script src="../../plugins/slick/slick.min.js"></script>
+    <script src="../../plugins/fancybox/jquery.fancybox.min.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const buyBtn = document.querySelector('.btn-buy');
+            if (buyBtn) {
+                buyBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    this.innerHTML = '<i class="ti-check"></i> Додано!';
+                    this.style.background = 'linear-gradient(135deg, #28a745, #20c997)';
+                    setTimeout(() => {
+                        window.location.href = '../../contact.html';
+                    }, 1000);
+                });
+            }
+            
+            const productImage = document.querySelector('.main-product-image');
+            if (productImage) {
+                productImage.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.05) rotate(2deg)';
+                });
+                
+                productImage.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1) rotate(0deg)';
+                });
+            }
+        });
+    </script>
 </body>
 </html>

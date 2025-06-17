@@ -1,264 +1,457 @@
-@@include('../../partials/header.htm') @@include('../../blocks/navigation.htm',
-{"pages" : "", "iphone" : "active"})
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="utf-8" />
+    <title>iPhone 12 mini з США | TechDrop UA - Оригінал з Америки</title>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="description" content="iPhone 12 mini з США - оригінал з Америки. Компактний iPhone 12 з усіма сучасними функціями. 5G, A14 Bionic та MagSafe в міні-корпусі." />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    <!-- CSS -->
+    <link rel="stylesheet" href="../../plugins/bootstrap/bootstrap.min.css" />
+    <link rel="stylesheet" href="../../plugins/themify-icons/themify-icons.css" />
+    <link rel="stylesheet" href="../../plugins/slick/slick.css" />
+    <link rel="stylesheet" href="../../plugins/slick/slick-theme.css" />
+    <link rel="stylesheet" href="../../plugins/fancybox/jquery.fancybox.min.css" />
+    <link href="../../css/style.css" rel="stylesheet" />
+    
+    <style>
+        .product-hero {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 60px 0;
+            color: white;
+        }
+        
+        .product-gallery {
+            text-align: center;
+        }
+        
+        .main-product-image {
+            max-width: 400px;
+            width: 100%;
+            height: auto;
+            filter: drop-shadow(0 20px 40px rgba(0,0,0,0.3));
+            transition: transform 0.3s ease;
+        }
+        
+        .main-product-image:hover {
+            transform: scale(1.05);
+        }
+        
+        .product-info {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.1);
+            margin-top: -50px;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .price-tag {
+            font-size: 2.5rem;
+            font-weight: 800;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            margin-bottom: 20px;
+        }
+        
+        .feature-badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #667eea, #764ba2);
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            margin: 5px;
+            font-weight: 600;
+        }
+        
+        .spec-table {
+            background: #f8f9fa;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 30px 0;
+        }
+        
+        .spec-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 12px 0;
+            border-bottom: 1px solid #e9ecef;
+        }
+        
+        .spec-row:last-child {
+            border-bottom: none;
+        }
+        
+        .spec-label {
+            font-weight: 600;
+            color: #495057;
+        }
+        
+        .spec-value {
+            color: #667eea;
+            font-weight: 500;
+        }
+        
+        .btn-buy {
+            background: linear-gradient(135deg, #28a745, #20c997);
+            border: none;
+            padding: 15px 40px;
+            border-radius: 50px;
+            color: white;
+            font-weight: 700;
+            font-size: 1.1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(40, 167, 69, 0.3);
+        }
+        
+        .btn-buy:hover {
+            background: linear-gradient(135deg, #20c997, #28a745);
+            transform: translateY(-3px);
+            box-shadow: 0 12px 35px rgba(40, 167, 69, 0.4);
+            color: white;
+        }
+        
+        .benefits-section {
+            background: #f8f9fa;
+            padding: 60px 0;
+            margin: 60px 0;
+            border-radius: 20px;
+        }
+        
+        .benefit-card {
+            text-align: center;
+            padding: 30px 20px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin: 15px 0;
+            transition: transform 0.3s ease;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .benefit-icon {
+            font-size: 3rem;
+            margin-bottom: 20px;
+        }
+        
+        .breadcrumb-nav {
+            background: transparent;
+            padding: 20px 0;
+        }
+        
+        .breadcrumb {
+            background: transparent;
+            padding: 0;
+        }
+        
+        .breadcrumb-item a {
+            color: #667eea;
+            text-decoration: none;
+        }
+        
+        .breadcrumb-item.active {
+            color: #6c757d;
+        }
+        
+        .product-badge {
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            display: inline-block;
+        }
+        
+        
+.bestseller-badge {
+    background: linear-gradient(135deg, #ffc107, #ff9800);
+}
+.pro-badge {
+    background: linear-gradient(135deg, #28a745, #20c997);
+}
+.max-badge {
+    background: linear-gradient(135deg, #dc3545, #fd7e14);
+}
+.mini-badge {
+    background: linear-gradient(135deg, #20c997, #17a2b8);
+}
+.flagship-badge {
+    background: linear-gradient(135deg, #6f42c1, #e83e8c);
+}
 
-<main class="product-detail-page">
-  <section class="product-hero">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-lg-6">
-          <div class="product-image-container">
-            <img
-              src="../../images/iphone/12mini.png"
-              alt="iPhone 12 mini"
-              class="product-main-image img-fluid"
-            />
-            <div class="product-gallery">
-              <img
-                src="../../images/iphone/12mini.png"
-                alt="iPhone 12 mini вид 1"
-                class="gallery-thumb"
-              />
-              <img
-                src="../../images/iphone/12mini.png"
-                alt="iPhone 12 mini вид 2"
-                class="gallery-thumb"
-              />
-              <img
-                src="../../images/iphone/12mini.png"
-                alt="iPhone 12 mini вид 3"
-                class="gallery-thumb"
-              />
+    </style>
+</head>
+
+<body class="body-wrapper">
+    <!-- Navigation -->
+    <nav class="navbar main-nav navbar-expand-lg px-2 px-sm-0 py-2 py-lg-0">
+        <div class="container">
+            <a class="navbar-brand" href="../../index.html">
+                <img src="../../images/Logo.png" alt="TechDrop UA Logo" />
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav">
+                <span class="ti-menu"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../index.html">Головна</a>
+                    </li>
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle" href="#" data-toggle="dropdown">
+                            Каталог <span><i class="ti-angle-down"></i></span>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a class="dropdown-item active" href="../../iphone.html">iPhone</a></li>
+                            <li><a class="dropdown-item" href="../../macbook.html">MacBook</a></li>
+                            <li><a class="dropdown-item" href="../../ipad.html">iPad</a></li>
+                            <li><a class="dropdown-item" href="../../watch.html">Apple Watch</a></li>
+                            <li><a class="dropdown-item" href="../../airpods.html">AirPods</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../about.html">Про нас</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../../contact.html">Контакти</a>
+                    </li>
+                </ul>
             </div>
-          </div>
         </div>
-        <div class="col-lg-6">
-          <div class="product-info">
-            <h1 class="product-title">iPhone 12 mini</h1>
-            <p class="product-subtitle">
-              Компактний розмір, максимальна потужність
-            </p>
-            <div class="product-price-section">
-              <span class="current-price">22999 ₴</span>
-              <span class="original-price">25999 ₴</span>
-              <span class="discount-badge">-12%</span>
+    </nav>
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb-nav">
+        <div class="container">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="../../index.html">Головна</a></li>
+                    <li class="breadcrumb-item"><a href="../../iphone.html">iPhone</a></li>
+                    <li class="breadcrumb-item active">iPhone 12 mini</li>
+                </ol>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Product Hero Section -->
+    <section class="product-hero">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6">
+                    <div class="product-gallery">
+                        <img src="../../images/iphone/12mini.png" alt="iPhone 12 mini" class="main-product-image" />
+                    </div>
+                </div>
+                <div class="col-lg-6">
+                    <div class="product-info">
+                        <div class="product-badge mini-badge">📱 Mini розмір</div>
+                        <h1 class="mb-3">iPhone 12 mini</h1>
+                        <div class="price-tag">від 22,999 ₴</div>
+                        
+                        <div class="mb-4">
+                            <span class="feature-badge">🇺🇸 Оригінал з США</span><span class="feature-badge">📱 A14 Bionic чіп</span><span class="feature-badge">📸 Покращена камера</span><span class="feature-badge">⚡ 5G швидкість</span><span class="feature-badge">🧲 MagSafe</span>
+                        </div>
+                        
+                        <p class="lead mb-4">
+                            Компактний iPhone 12 з усіма сучасними функціями. 5G, A14 Bionic та MagSafe в міні-корпусі.
+                        </p>
+                        
+                        <div class="d-flex gap-3 mb-4">
+                            <button class="btn btn-buy flex-fill">
+                                <i class="ti-shopping-cart"></i> Замовити зараз
+                            </button>
+                            <a href="../../contact.html" class="btn btn-outline-light flex-fill">
+                                <i class="ti-headphone-alt"></i> Консультація
+                            </a>
+                        </div>
+                        
+                        <small class="text-muted">
+                            <i class="ti-truck"></i> Доставка 5-7 днів | 
+                            <i class="ti-credit-card"></i> Оплата при отриманні |
+                            <i class="ti-star"></i> Оригінал з США
+                        </small>
+                    </div>
+                </div>
             </div>
-            <div class="product-features">
-              <ul>
-                <li>🤏 Найменший та найлегший iPhone 12</li>
-                <li>📱 Super Retina XDR дисплей 5.4"</li>
-                <li>📸 Система подвійних камер</li>
-                <li>⚡ A14 Bionic чіп з Neural Engine</li>
-                <li>🌐 5G підключення для швидкого інтернету</li>
-                <li>🔋 До 15 годин відтворення відео</li>
-              </ul>
+        </div>
+    </section>
+
+    <!-- Specifications -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto">
+                    <h2 class="text-center mb-5">Технічні характеристики</h2>
+                    
+                    <div class="spec-table">
+                        
+                        <div class="spec-row">
+                            <span class="spec-label">Дисплей</span>
+                            <span class="spec-value">5.4" Super Retina XDR OLED</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Процесор</span>
+                            <span class="spec-value">A14 Bionic чіп</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Основна камера</span>
+                            <span class="spec-value">12MP + 12MP Ultra Wide</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Фронтальна камера</span>
+                            <span class="spec-value">12MP TrueDepth</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Пам'ять</span>
+                            <span class="spec-value">64GB / 128GB / 256GB</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Оперативна пам'ять</span>
+                            <span class="spec-value">4GB RAM</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Батарея</span>
+                            <span class="spec-value">До 15 годин відео</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Матеріал</span>
+                            <span class="spec-value">Алюміній та скло</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Водостійкість</span>
+                            <span class="spec-value">IP68</span>
+                        </div>
+                        <div class="spec-row">
+                            <span class="spec-label">Зарядка</span>
+                            <span class="spec-value">Lightning, MagSafe, Qi</span>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <div class="order-section">
-              <button
-                class="btn btn-primary btn-order"
-                data-bs-toggle="modal"
-                data-bs-target="#orderModal"
-                data-product="iPhone 12 mini"
-                data-price="22999"
-              >
-                📱 Замовити зараз
-              </button>
-              <p class="delivery-info">
-                🚚 Доставка 5-7 днів | 🛡️ Гарантія якості
-              </p>
+        </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="benefits-section">
+        <div class="container">
+            <h2 class="text-center mb-5">Чому варто обрати iPhone 12 mini?</h2>
+            <div class="row">
+                
+                <div class="col-md-3">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">📏</div>
+                        <h5>Компактний</h5>
+                        <p>Зручно користуватися однією рукою</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">⚡</div>
+                        <h5>5G швидкість</h5>
+                        <p>Надшвидкий інтернет нового покоління</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">🧲</div>
+                        <h5>MagSafe</h5>
+                        <p>Магнітна зарядка та аксесуари</p>
+                    </div>
+                </div>
+                <div class="col-md-3">
+                    <div class="benefit-card">
+                        <div class="benefit-icon">💰</div>
+                        <h5>Доступна ціна</h5>
+                        <p>Найдешевший iPhone 12</p>
+                    </div>
+                </div>
             </div>
-          </div>
         </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="product-specs">
-    <div class="container">
-      <h2 class="section-title">Технічні характеристики</h2>
-      <div class="specs-grid">
-        <div class="spec-group">
-          <h3>Дисплей</h3>
-          <table class="table table-striped">
-            <tr>
-              <td>Розмір</td>
-              <td>5.4 дюйма (діагональ)</td>
-            </tr>
-            <tr>
-              <td>Тип</td>
-              <td>Super Retina XDR OLED</td>
-            </tr>
-            <tr>
-              <td>Роздільність</td>
-              <td>2340 x 1080 пікселів при 476 ppi</td>
-            </tr>
-            <tr>
-              <td>Контрастність</td>
-              <td>2,000,000:1</td>
-            </tr>
-            <tr>
-              <td>Яскравість</td>
-              <td>625 ніт (стандартна), 1200 ніт (HDR)</td>
-            </tr>
-          </table>
+    <!-- CTA Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-8 mx-auto text-center">
+                    <div class="bg-primary text-white p-5 rounded">
+                        <h3>Готові замовити iPhone 12 mini?</h3>
+                        <p class="mb-4">Компактний iPhone 12 з усіма сучасними функціями. 5G, A14 Bionic та MagSafe в міні-корпусі.</p>
+                        <div class="d-flex justify-content-center gap-3 flex-wrap">
+                            <a href="../../contact.html" class="btn btn-light btn-lg">
+                                <i class="ti-phone"></i> Зателефонувати
+                            </a>
+                            <a href="https://t.me/techdropua" class="btn btn-outline-light btn-lg" target="_blank">
+                                <i class="ti-comments"></i> Telegram
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="spec-group">
-          <h3>Камера</h3>
-          <table class="table table-striped">
-            <tr>
-              <td>Основна</td>
-              <td>12 МП, f/1.6, OIS</td>
-            </tr>
-            <tr>
-              <td>Ультраширока</td>
-              <td>12 МП, f/2.4, 120°</td>
-            </tr>
-            <tr>
-              <td>Фронтальна</td>
-              <td>12 МП TrueDepth, f/2.2</td>
-            </tr>
-            <tr>
-              <td>Запис відео</td>
-              <td>4K Dolby Vision HDR</td>
-            </tr>
-            <tr>
-              <td>Особливості</td>
-              <td>Нічний режим, Deep Fusion</td>
-            </tr>
-          </table>
-        </div>
-        <div class="spec-group">
-          <h3>Продуктивність</h3>
-          <table class="table table-striped">
-            <tr>
-              <td>Чіп</td>
-              <td>A14 Bionic з Neural Engine</td>
-            </tr>
-            <tr>
-              <td>Пам'ять</td>
-              <td>64GB / 128GB / 256GB</td>
-            </tr>
-            <tr>
-              <td>ОС</td>
-              <td>iOS 14 (оновлюється)</td>
-            </tr>
-            <tr>
-              <td>5G</td>
-              <td>Підтримка мереж 5G</td>
-            </tr>
-          </table>
-        </div>
-        <div class="spec-group">
-          <h3>Розміри і вага</h3>
-          <table class="table table-striped">
-            <tr>
-              <td>Висота</td>
-              <td>131.5 мм</td>
-            </tr>
-            <tr>
-              <td>Ширина</td>
-              <td>64.2 мм</td>
-            </tr>
-            <tr>
-              <td>Товщина</td>
-              <td>7.4 мм</td>
-            </tr>
-            <tr>
-              <td>Вага</td>
-              <td>135 грамів</td>
-            </tr>
-          </table>
-        </div>
-      </div>
-    </div>
-  </section>
+    </section>
 
-  <section class="product-features-detailed">
-    <div class="container">
-      <h2 class="section-title">Ключові особливості</h2>
-      <div class="feature-cards">
-        <div class="feature-card">
-          <div class="feature-icon">🤏</div>
-          <h3>Компактний дизайн</h3>
-          <p>
-            Найменший iPhone 12 з усією потужністю великих моделей в невеликому
-            корпусі.
-          </p>
+    <!-- Footer -->
+    <footer class="section footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-4">
+                    <h5>TechDrop UA</h5>
+                    <p>Оригінальні iPhone з США з доставкою по Україні</p>
+                </div>
+                <div class="col-lg-4">
+                    <h5>Контакти</h5>
+                    <p>Telegram: @techdropua<br>Email: info@techdrop.ua</p>
+                </div>
+                <div class="col-lg-4">
+                    <h5>Графік роботи</h5>
+                    <p>Пн-Пт: 9:00-18:00<br>Сб-Нд: 10:00-16:00</p>
+                </div>
+            </div>
         </div>
-        <div class="feature-card">
-          <div class="feature-icon">📸</div>
-          <h3>Подвійна камера</h3>
-          <p>
-            Система з двох камер для професійних фото та відео навіть у слабкому
-            освітленні.
-          </p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">🌐</div>
-          <h3>5G швидкість</h3>
-          <p>
-            Насолоджуйтесь надшвидким інтернетом та миттєвим завантаженням у
-            мережах 5G.
-          </p>
-        </div>
-        <div class="feature-card">
-          <div class="feature-icon">⚡</div>
-          <h3>A14 Bionic</h3>
-          <p>Потужний чіп забезпечує швидку роботу всіх додатків та ігор.</p>
-        </div>
-      </div>
-    </div>
-  </section>
+    </footer>
 
-  <section class="package-contents">
-    <div class="container">
-      <h2 class="section-title">Комплектація</h2>
-      <div class="package-grid">
-        <div class="package-item">
-          <span class="package-icon">📱</span>
-          <span>iPhone 12 mini</span>
-        </div>
-        <div class="package-item">
-          <span class="package-icon">🔌</span>
-          <span>Кабель Lightning - USB-C</span>
-        </div>
-        <div class="package-item">
-          <span class="package-icon">📄</span>
-          <span>Документація</span>
-        </div>
-        <div class="package-item">
-          <span class="package-icon">🍎</span>
-          <span>Наклейки Apple</span>
-        </div>
-      </div>
-      <p class="package-note">
-        *Адаптер живлення та навушники EarPods продаються окремо
-      </p>
-    </div>
-  </section>
-
-  <section class="related-products">
-    <div class="container">
-      <h2 class="section-title">Схожі товари</h2>
-      <div class="related-grid">
-        <a href="iphone-12.html" class="related-product">
-          <img src="../../images/iphone/12.png" alt="iPhone 12" />
-          <h4>iPhone 12</h4>
-          <span class="price">24999 ₴</span>
-        </a>
-        <a href="iphone-13-mini.html" class="related-product">
-          <img src="../../images/iphone/13mini.png" alt="iPhone 13 mini" />
-          <h4>iPhone 13 mini</h4>
-          <span class="price">26999 ₴</span>
-        </a>
-        <a href="iphone-11.html" class="related-product">
-          <img src="../../images/iphone/11.png" alt="iPhone 11" />
-          <h4>iPhone 11</h4>
-          <span class="price">18999 ₴</span>
-        </a>
-      </div>
-    </div>
-  </section>
-</main>
-
-@@include('../../product-detail-template.htm')
-@@include('../../partials/footer.htm')
+    <!-- Scripts -->
+    <script src="../../plugins/jquery/jquery.min.js"></script>
+    <script src="../../plugins/bootstrap/bootstrap.min.js"></script>
+    <script src="../../plugins/slick/slick.min.js"></script>
+    <script src="../../plugins/fancybox/jquery.fancybox.min.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const buyBtn = document.querySelector('.btn-buy');
+            if (buyBtn) {
+                buyBtn.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    this.innerHTML = '<i class="ti-check"></i> Додано!';
+                    this.style.background = 'linear-gradient(135deg, #28a745, #20c997)';
+                    setTimeout(() => {
+                        window.location.href = '../../contact.html';
+                    }, 1000);
+                });
+            }
+            
+            const productImage = document.querySelector('.main-product-image');
+            if (productImage) {
+                productImage.addEventListener('mouseenter', function() {
+                    this.style.transform = 'scale(1.05) rotate(2deg)';
+                });
+                
+                productImage.addEventListener('mouseleave', function() {
+                    this.style.transform = 'scale(1) rotate(0deg)';
+                });
+            }
+        });
+    </script>
+</body>
+</html>
