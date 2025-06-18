@@ -1,0 +1,941 @@
+<!DOCTYPE html>
+
+<!--
+ // WEBSITE: https://themefisher.com
+ // TWITTER: https://twitter.com/themefisher
+ // FACEBOOK: https://www.facebook.com/themefisher
+ // GITHUB: https://github.com/themefisher/
+-->
+
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>💕 Романтичний сюрприз</title>
+    <style>
+      /* CSS змінні для легкого налаштування */
+      :root {
+        --primary-pink: rgba(255, 182, 193, 0.9);
+        --soft-red: rgba(255, 160, 160, 0.8);
+        --white-glow: rgba(255, 255, 255, 0.8);
+        --peach: rgba(255, 218, 185, 0.8);
+        --plum: rgba(221, 160, 221, 0.8);
+        --love-gradient: linear-gradient(45deg, #ff6b9d, #ff8e9b, #ffc3a0);
+        --message-font-size: clamp(28px, 6vw, 72px);
+        --word-font-size: clamp(12px, 2.5vw, 22px);
+        --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+      }
+
+      * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+      }
+
+      body {
+        background: radial-gradient(
+          ellipse at bottom,
+          #1a1a2e 0%,
+          #16213e 50%,
+          #0f0f23 100%
+        );
+        overflow: hidden;
+        height: 100vh;
+        position: relative;
+        font-family: "Segoe UI", Arial, sans-serif;
+      }
+
+      /* Canvas для анімацій */
+      canvas {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: block;
+      }
+
+      #fireworksCanvas {
+        z-index: 1;
+      }
+
+      #heartsCanvas {
+        z-index: 3;
+      }
+
+      /* Мерехтливі зірки на фоні */
+      .stars {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        z-index: 0;
+      }
+
+      .star {
+        position: absolute;
+        background: white;
+        border-radius: 50%;
+        animation: twinkle 3s infinite ease-in-out;
+      }
+
+      @keyframes twinkle {
+        0%,
+        100% {
+          opacity: 0.3;
+          transform: scale(1);
+        }
+        50% {
+          opacity: 1;
+          transform: scale(1.4);
+        }
+      }
+
+      /* Спливаючі романтичні слова */
+      .floating-word {
+        position: absolute;
+        color: white;
+        font-size: clamp(14px, 3vw, 24px);
+        font-weight: 300;
+        opacity: 0;
+        pointer-events: none;
+        white-space: nowrap;
+        z-index: 5;
+        text-shadow: 0 0 15px rgba(255, 182, 193, 0.8),
+          0 0 25px rgba(255, 182, 193, 0.4);
+        animation: wordFloat 6s ease-in-out forwards;
+      }
+
+      @keyframes wordFloat {
+        0% {
+          opacity: 0;
+          transform: translateY(30px) scale(0.7) rotate(-5deg);
+        }
+        15% {
+          opacity: 1;
+          transform: translateY(10px) scale(1) rotate(0deg);
+        }
+        85% {
+          opacity: 1;
+          transform: translateY(-40px) scale(1.05) rotate(2deg);
+        }
+        100% {
+          opacity: 0;
+          transform: translateY(-80px) scale(0.8) rotate(5deg);
+        }
+      }
+
+      /* Романтичне повідомлення */
+      .love-message {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        z-index: 10;
+        opacity: 0;
+        color: white;
+        font-size: clamp(28px, 6vw, 64px);
+        font-weight: 700;
+        text-align: center;
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.8),
+          0 0 40px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.4),
+          0 0 80px rgba(255, 182, 193, 0.3);
+        letter-spacing: 3px;
+        white-space: nowrap;
+        animation: messageAppear 2s ease-in-out 5s forwards,
+          messageGlow 3s ease-in-out 7s infinite;
+      }
+
+      @keyframes messageAppear {
+        0% {
+          opacity: 0;
+          transform: translate(-50%, -50%) scale(0.5) rotateY(90deg);
+        }
+        50% {
+          opacity: 0.8;
+          transform: translate(-50%, -50%) scale(1.1) rotateY(0deg);
+        }
+        100% {
+          opacity: 1;
+          transform: translate(-50%, -50%) scale(1) rotateY(0deg);
+        }
+      }
+
+      @keyframes messageGlow {
+        0%,
+        100% {
+          text-shadow: 0 0 20px rgba(255, 255, 255, 0.8),
+            0 0 40px rgba(255, 255, 255, 0.6), 0 0 60px rgba(255, 255, 255, 0.4),
+            0 0 80px rgba(255, 182, 193, 0.3);
+        }
+        50% {
+          text-shadow: 0 0 30px rgba(255, 255, 255, 1),
+            0 0 60px rgba(255, 255, 255, 0.8), 0 0 90px rgba(255, 255, 255, 0.6),
+            0 0 120px rgba(255, 182, 193, 0.5);
+        }
+      }
+
+      /* Кнопка повернення */
+      .back-btn {
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        background: rgba(255, 255, 255, 0.1);
+        backdrop-filter: blur(10px);
+        border: 1px solid rgba(255, 255, 255, 0.3);
+        color: white;
+        padding: 12px 20px;
+        border-radius: 25px;
+        text-decoration: none;
+        font-size: 14px;
+        transition: all 0.3s ease;
+        z-index: 20;
+        cursor: pointer;
+      }
+
+      .back-btn:hover {
+        background: rgba(255, 255, 255, 0.2);
+        transform: translateY(-2px);
+        box-shadow: 0 8px 20px rgba(255, 182, 193, 0.3);
+        color: white;
+        text-decoration: none;
+      }
+
+      /* Адаптивність */
+      @media (max-width: 768px) {
+        .love-message {
+          font-size: clamp(24px, 10vw, 52px);
+          letter-spacing: 2px;
+          padding: 0 15px;
+          line-height: 1.2;
+        }
+
+        .floating-word {
+          font-size: clamp(12px, 4.5vw, 20px);
+        }
+
+        .back-btn {
+          top: 15px;
+          left: 15px;
+          padding: 10px 16px;
+          font-size: 12px;
+        }
+      }
+
+      /* Оптимізація для iPhone 14 Pro Max та подібних */
+      @media (max-width: 430px) and (max-height: 932px) {
+        .love-message {
+          font-size: clamp(20px, 8vw, 44px);
+          letter-spacing: 1px;
+          top: 45%;
+          padding: 0 20px;
+          text-align: center;
+          white-space: normal;
+          max-width: 90vw;
+        }
+
+        .floating-word {
+          font-size: clamp(10px, 4vw, 16px);
+          font-weight: 400;
+        }
+
+        .back-btn {
+          top: 12px;
+          left: 12px;
+          padding: 8px 14px;
+          font-size: 11px;
+          border-radius: 20px;
+        }
+
+        .stars {
+          /* Менше зірок для продуктивності на мобільних */
+        }
+      }
+
+      /* Вертикальна орієнтація мобільних */
+      @media (max-width: 480px) and (orientation: portrait) {
+        .love-message {
+          font-size: clamp(18px, 7vw, 40px);
+          top: 40%;
+          letter-spacing: 0.5px;
+          line-height: 1.3;
+        }
+
+        .floating-word {
+          font-size: clamp(9px, 3.5vw, 14px);
+        }
+      }
+
+      /* Горизонтальна орієнтація мобільних */
+      @media (max-height: 500px) and (orientation: landscape) {
+        .love-message {
+          font-size: clamp(16px, 6vh, 32px);
+          top: 50%;
+          letter-spacing: 1px;
+        }
+
+        .floating-word {
+          font-size: clamp(8px, 3vh, 12px);
+        }
+
+        .back-btn {
+          top: 8px;
+          left: 8px;
+          padding: 6px 12px;
+          font-size: 10px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <a href="index.html" class="back-btn">← Назад</a>
+
+    <!-- Зірки на фоні -->
+    <div class="stars"></div>
+
+    <!-- Canvas для анімацій -->
+    <canvas id="fireworksCanvas"></canvas>
+    <canvas id="heartsCanvas"></canvas>
+
+    <!-- Романтичне повідомлення -->
+    <div class="love-message">Дар'я, я кохаю тебе ❤️</div>
+
+    <script>
+      // Романтичні слова
+      const ROMANTIC_WORDS = [
+        "ніжність",
+        "кохання",
+        "турбота",
+        "щастя",
+        "теплота",
+        "усмішка",
+        "обійми",
+        "мрія",
+        "радість",
+        "краса",
+        "серце",
+        "душа",
+        "сонечко",
+        "зірочка",
+        "принцеса",
+        "ти мій світ",
+        "моя любов",
+        "назавжди разом",
+        "єдина",
+        "дорога",
+        "рідна",
+        "найкраща",
+        "чарівна",
+        "ти особлива",
+        "моя радість",
+        "мій скарб",
+        "анголятко",
+        "сонце моє",
+        "зайчик",
+        "лапочка",
+        "дивовижна",
+        "ти ідеальна",
+        "моя доля",
+        "мій дім",
+        "спокій",
+        "ти — все для мене",
+        "моя сила",
+        "надія",
+        "віра",
+        "мій бобр",
+        "милота",
+        "ласка",
+        "безмежність",
+        "відданість",
+        "єдине кохання",
+        "моя королева",
+        "сонце мого життя",
+        "найрідніша",
+        "моя мрія",
+        "ангел мій",
+        "скарб душі",
+        "серденько",
+        "люба",
+        "кохана",
+        "дорогенька",
+        "закохана",
+        "мила",
+        "чудова",
+      ];
+
+      // Глобальні змінні
+      let fireworksCanvas, fireworksCtx, heartsCanvas, heartsCtx;
+      let rockets = [];
+      let particles = [];
+      let hearts = [];
+      let isAnimating = true;
+
+      // Ініціалізація Canvas
+      function initCanvas() {
+        // Феєрверки
+        fireworksCanvas = document.getElementById("fireworksCanvas");
+        fireworksCtx = fireworksCanvas.getContext("2d");
+        fireworksCanvas.width = window.innerWidth;
+        fireworksCanvas.height = window.innerHeight;
+
+        // Сердечка
+        heartsCanvas = document.getElementById("heartsCanvas");
+        heartsCtx = heartsCanvas.getContext("2d");
+        heartsCanvas.width = window.innerWidth;
+        heartsCanvas.height = window.innerHeight;
+      }
+
+      // Генерація зірок (адаптивно)
+      function createStars() {
+        const starsContainer = document.querySelector(".stars");
+        const isMobile = window.innerWidth <= 768;
+        const starsCount = isMobile ? 100 : 200; // Менше зірок на мобільних
+
+        for (let i = 0; i < starsCount; i++) {
+          const star = document.createElement("div");
+          star.className = "star";
+          const size = Math.random() * (isMobile ? 2 : 3) + 1;
+          star.style.width = size + "px";
+          star.style.height = size + "px";
+          star.style.left = Math.random() * 100 + "%";
+          star.style.top = Math.random() * 100 + "%";
+          star.style.animationDelay = Math.random() * 3 + "s";
+          star.style.animationDuration = 2 + Math.random() * 4 + "s";
+          starsContainer.appendChild(star);
+        }
+      }
+
+      // Створення спливаючих романтичних слів
+      function createFloatingWord() {
+        const word = document.createElement("div");
+        word.className = "floating-word";
+        word.textContent =
+          ROMANTIC_WORDS[Math.floor(Math.random() * ROMANTIC_WORDS.length)];
+
+        // Розумне розміщення (уникаємо центр)
+        let x, y;
+        const centerX = window.innerWidth / 2;
+        const centerY = window.innerHeight / 2;
+        const exclusionRadius =
+          Math.min(window.innerWidth, window.innerHeight) * 0.25;
+
+        do {
+          x = Math.random() * (window.innerWidth - 200);
+          y = Math.random() * (window.innerHeight - 100);
+        } while (
+          Math.sqrt(Math.pow(x - centerX, 2) + Math.pow(y - centerY, 2)) <
+          exclusionRadius
+        );
+
+        word.style.left = x + "px";
+        word.style.top = y + "px";
+
+        // Випадковий колір з романтичної палітри
+        const colors = [
+          "rgba(255, 182, 193, 0.9)",
+          "rgba(255, 160, 122, 0.9)",
+          "rgba(255, 105, 180, 0.9)",
+          "rgba(255, 192, 203, 0.9)",
+          "rgba(255, 228, 225, 0.9)",
+          "rgba(255, 218, 185, 0.9)",
+        ];
+        word.style.color = colors[Math.floor(Math.random() * colors.length)];
+
+        document.body.appendChild(word);
+
+        // Видалення після анімації
+        setTimeout(() => {
+          if (word.parentNode) {
+            word.remove();
+          }
+        }, 6000);
+      }
+
+      // Клас частинки для феєрверків
+      class Particle {
+        constructor(x, y, color, velocity) {
+          this.x = x;
+          this.y = y;
+          this.color = color;
+          this.velocity = velocity;
+          this.life = 1;
+          this.decay = Math.random() * 0.015 + 0.01;
+          this.size = Math.random() * 4 + 2;
+          this.gravity = 0.05;
+          this.friction = 0.98;
+        }
+
+        update() {
+          this.velocity.x *= this.friction;
+          this.velocity.y *= this.friction;
+          this.velocity.y += this.gravity;
+          this.x += this.velocity.x;
+          this.y += this.velocity.y;
+          this.life -= this.decay;
+        }
+
+        draw() {
+          fireworksCtx.save();
+          fireworksCtx.globalAlpha = this.life;
+          fireworksCtx.shadowBlur = 15;
+          fireworksCtx.shadowColor = this.color;
+          fireworksCtx.fillStyle = this.color;
+          fireworksCtx.beginPath();
+          fireworksCtx.arc(this.x, this.y, this.size, 0, Math.PI * 2);
+          fireworksCtx.fill();
+          fireworksCtx.restore();
+        }
+      }
+
+      // Клас ракети
+      class Rocket {
+        constructor(x, targetY) {
+          this.x = x;
+          this.y = fireworksCanvas.height;
+          this.targetY = targetY;
+          this.velocity = {
+            x: (Math.random() - 0.5) * 4,
+            y: -15 - Math.random() * 5,
+          };
+          this.color = `hsl(${Math.random() * 360}, 100%, 70%)`;
+          this.trail = [];
+          this.exploded = false;
+        }
+
+        update() {
+          if (!this.exploded) {
+            this.velocity.y += 0.1;
+            this.x += this.velocity.x;
+            this.y += this.velocity.y;
+
+            this.trail.push({ x: this.x, y: this.y, life: 20 });
+            if (this.trail.length > 15) this.trail.shift();
+
+            this.trail.forEach((point) => point.life--);
+            this.trail = this.trail.filter((point) => point.life > 0);
+
+            if (this.y <= this.targetY || this.velocity.y >= 0) {
+              this.explode();
+            }
+          }
+        }
+
+        draw() {
+          if (!this.exploded) {
+            // Малювання сліду
+            this.trail.forEach((point, index) => {
+              fireworksCtx.save();
+              fireworksCtx.globalAlpha = point.life / 20;
+              fireworksCtx.shadowBlur = 10;
+              fireworksCtx.shadowColor = this.color;
+              fireworksCtx.fillStyle = this.color;
+              fireworksCtx.beginPath();
+              fireworksCtx.arc(point.x, point.y, 3, 0, Math.PI * 2);
+              fireworksCtx.fill();
+              fireworksCtx.restore();
+            });
+
+            // Малювання ракети
+            fireworksCtx.save();
+            fireworksCtx.shadowBlur = 20;
+            fireworksCtx.shadowColor = this.color;
+            fireworksCtx.fillStyle = this.color;
+            fireworksCtx.beginPath();
+            fireworksCtx.arc(this.x, this.y, 4, 0, Math.PI * 2);
+            fireworksCtx.fill();
+            fireworksCtx.restore();
+          }
+        }
+
+        explode() {
+          this.exploded = true;
+          const explosionTypes = ["circle", "heart", "star"];
+          const type =
+            explosionTypes[Math.floor(Math.random() * explosionTypes.length)];
+
+          // Створення романтичних слів при вибуху
+          for (let i = 0; i < 2; i++) {
+            setTimeout(() => createFloatingWord(), i * 100);
+          }
+
+          if (type === "circle") {
+            this.createCircleExplosion();
+          } else if (type === "heart") {
+            this.createHeartExplosion();
+          } else {
+            this.createStarExplosion();
+          }
+        }
+
+        createCircleExplosion() {
+          const particleCount = 50 + Math.random() * 30;
+          const colors = [
+            "#ff1744",
+            "#e91e63",
+            "#ff4081",
+            "#ff6b9d",
+            "#feca57",
+            "#ff9ff3",
+            "#54a0ff",
+            "#5f27cd",
+          ];
+
+          for (let i = 0; i < particleCount; i++) {
+            const angle = (Math.PI * 2 * i) / particleCount;
+            const velocity = 4 + Math.random() * 8;
+            const color = colors[Math.floor(Math.random() * colors.length)];
+
+            particles.push(
+              new Particle(this.x, this.y, color, {
+                x: Math.cos(angle) * velocity,
+                y: Math.sin(angle) * velocity,
+              })
+            );
+          }
+        }
+
+        createHeartExplosion() {
+          const particleCount = 30;
+          for (let i = 0; i < particleCount; i++) {
+            const t = (i / particleCount) * Math.PI * 2;
+            const x = 16 * Math.pow(Math.sin(t), 3);
+            const y = -(
+              13 * Math.cos(t) -
+              5 * Math.cos(2 * t) -
+              2 * Math.cos(3 * t) -
+              Math.cos(4 * t)
+            );
+            const scale = 0.4;
+
+            particles.push(
+              new Particle(this.x, this.y, "#ff69b4", {
+                x: x * scale,
+                y: y * scale,
+              })
+            );
+          }
+        }
+
+        createStarExplosion() {
+          const points = 5;
+          const particlesPerPoint = 8;
+
+          for (let point = 0; point < points; point++) {
+            const angle = (Math.PI * 2 * point) / points;
+            for (let i = 0; i < particlesPerPoint; i++) {
+              const velocity = 3 + Math.random() * 6 + i * 0.5;
+              const color = `hsl(${45 + Math.random() * 60}, 100%, 70%)`;
+
+              particles.push(
+                new Particle(this.x, this.y, color, {
+                  x: Math.cos(angle) * velocity,
+                  y: Math.sin(angle) * velocity,
+                })
+              );
+            }
+          }
+        }
+      }
+
+      // Клас сердечка з фізикою
+      class PhysicsHeart {
+        constructor(x, y) {
+          this.x = x;
+          this.y = y;
+          this.vx = (Math.random() - 0.5) * 6;
+          this.vy = Math.random() * 3 + 2;
+          this.rotation = Math.random() * Math.PI * 2;
+          this.rotationSpeed = (Math.random() - 0.5) * 0.15;
+          this.size = Math.random() * 12 + 8;
+          this.gravity = 0.25;
+          this.bounce = 0.6;
+          this.friction = 0.98;
+          this.settled = false;
+          this.groundY = window.innerHeight - this.size;
+          this.bounces = 0;
+          this.maxBounces = 2;
+
+          const heartColors = [
+            "#ff1744",
+            "#e91e63",
+            "#ff4081",
+            "#ff6b9d",
+            "#ff8a80",
+            "#ff5722",
+            "#d500f9",
+          ];
+          this.color =
+            heartColors[Math.floor(Math.random() * heartColors.length)];
+        }
+
+        update() {
+          if (!this.settled) {
+            // Фізика
+            this.vy += this.gravity;
+            this.x += this.vx * this.friction;
+            this.y += this.vy;
+            this.rotation += this.rotationSpeed;
+
+            // Відскок від стін
+            if (
+              this.x <= this.size ||
+              this.x >= window.innerWidth - this.size
+            ) {
+              this.vx *= -0.8;
+              this.x = Math.max(
+                this.size,
+                Math.min(window.innerWidth - this.size, this.x)
+              );
+            }
+
+            // Перевірка землі та відскок
+            if (this.y >= this.groundY) {
+              if (this.bounces < this.maxBounces && Math.abs(this.vy) > 1.5) {
+                this.vy *= -this.bounce;
+                this.vx *= 0.8;
+                this.y = this.groundY;
+                this.bounces++;
+                this.rotationSpeed *= 0.7;
+              } else {
+                // Осідання
+                this.settled = true;
+                this.y = this.groundY;
+                this.vx = 0;
+                this.vy = 0;
+                this.rotationSpeed = 0;
+
+                // Підняття землі для наступних сердечок
+                const heartHeight = this.size * 1.5;
+                for (let heart of hearts) {
+                  if (
+                    heart.settled &&
+                    Math.abs(heart.x - this.x) < heartHeight
+                  ) {
+                    this.groundY -= heartHeight * 0.5;
+                    this.y = this.groundY;
+                    break;
+                  }
+                }
+              }
+            }
+          }
+        }
+
+        draw() {
+          heartsCtx.save();
+          heartsCtx.translate(this.x, this.y);
+          heartsCtx.rotate(this.rotation);
+
+          const scale = this.size / 20;
+          heartsCtx.scale(scale, scale);
+
+          // Світіння
+          heartsCtx.shadowBlur = 15;
+          heartsCtx.shadowColor = this.color;
+          heartsCtx.fillStyle = this.color;
+
+          // Форма сердечка
+          heartsCtx.beginPath();
+          heartsCtx.moveTo(0, 0);
+          heartsCtx.bezierCurveTo(-10, -8, -20, -2, -10, 5);
+          heartsCtx.bezierCurveTo(-10, 12, 0, 20, 0, 20);
+          heartsCtx.bezierCurveTo(0, 20, 10, 12, 10, 5);
+          heartsCtx.bezierCurveTo(20, -2, 10, -8, 0, 0);
+          heartsCtx.fill();
+
+          heartsCtx.restore();
+        }
+      }
+
+      // Запуск ракети
+      function launchRocket() {
+        if (!isAnimating) return;
+        const x = Math.random() * fireworksCanvas.width;
+        const targetY =
+          fireworksCanvas.height * 0.2 +
+          Math.random() * fireworksCanvas.height * 0.3;
+        rockets.push(new Rocket(x, targetY));
+      }
+
+      // Створення сердечка (ІНТЕНСИВНО!)
+      function createHeart() {
+        const isMobile = window.innerWidth <= 768;
+        const maxHearts = isMobile ? 150 : 300; // Менше сердечок на мобільних
+        if (!isAnimating || hearts.length > maxHearts) return;
+        const x = Math.random() * window.innerWidth;
+        hearts.push(new PhysicsHeart(x, -30));
+      }
+
+      // Дощ сердечок (багато одночасно)
+      function createHeartRain() {
+        if (!isAnimating) return;
+        const isMobile = window.innerWidth <= 768;
+        // Створюємо менше сердечок на мобільних для продуктивності
+        const heartsCount = isMobile
+          ? 3 + Math.floor(Math.random() * 4)
+          : 5 + Math.floor(Math.random() * 6);
+        for (let i = 0; i < heartsCount; i++) {
+          setTimeout(() => createHeart(), i * 50);
+        }
+      }
+
+      // Анімація феєрверків
+      function animateFireworks() {
+        if (!isAnimating) return;
+
+        fireworksCtx.fillStyle = "rgba(26, 26, 46, 0.1)";
+        fireworksCtx.fillRect(
+          0,
+          0,
+          fireworksCanvas.width,
+          fireworksCanvas.height
+        );
+
+        // Оновлення ракет
+        rockets = rockets.filter((rocket) => {
+          rocket.update();
+          rocket.draw();
+          return !rocket.exploded;
+        });
+
+        // Оновлення частинок
+        particles = particles.filter((particle) => {
+          particle.update();
+          particle.draw();
+          return particle.life > 0;
+        });
+
+        requestAnimationFrame(animateFireworks);
+      }
+
+      // Анімація сердечок
+      function animateHearts() {
+        if (!isAnimating) return;
+
+        heartsCtx.clearRect(0, 0, heartsCanvas.width, heartsCanvas.height);
+
+        hearts.forEach((heart) => {
+          heart.update();
+          heart.draw();
+        });
+
+        // Видалення сердечок що вилетіли за межі (тільки по сторонах)
+        hearts = hearts.filter(
+          (heart) => heart.x > -50 && heart.x < window.innerWidth + 50
+        );
+
+        requestAnimationFrame(animateHearts);
+      }
+
+      // Автоматичний запуск ракет
+      function autoLaunchRockets() {
+        if (!isAnimating) return;
+        launchRocket();
+        setTimeout(autoLaunchRockets, 800 + Math.random() * 1500);
+      }
+
+      // Автоматичне створення романтичних слів
+      function autoCreateWords() {
+        if (!isAnimating) return;
+        createFloatingWord();
+        setTimeout(autoCreateWords, 600 + Math.random() * 800);
+      }
+
+      // Автоматичний дощ сердечок
+      function autoHeartRain() {
+        if (!isAnimating) return;
+        createHeartRain();
+        setTimeout(autoHeartRain, 300 + Math.random() * 400);
+      }
+
+      // Обробка кліків
+      function handleClick(e) {
+        const rect = fireworksCanvas.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const targetY = e.clientY - rect.top;
+        rockets.push(new Rocket(x, targetY));
+
+        // ДУЖЕ багато сердечок при кліку
+        for (let i = 0; i < 8; i++) {
+          setTimeout(() => createHeart(), i * 30);
+        }
+
+        // Слова при кліку
+        for (let i = 0; i < 2; i++) {
+          setTimeout(() => createFloatingWord(), i * 150);
+        }
+      }
+
+      // Обробка зміни розміру
+      function handleResize() {
+        fireworksCanvas.width = window.innerWidth;
+        fireworksCanvas.height = window.innerHeight;
+        heartsCanvas.width = window.innerWidth;
+        heartsCanvas.height = window.innerHeight;
+      }
+
+      // Ініціалізація
+      function init() {
+        initCanvas();
+        createStars();
+
+        // Запуск анімацій
+        animateFireworks();
+        animateHearts();
+
+        // Початкові ефекти
+        setTimeout(() => {
+          for (let i = 0; i < 5; i++) {
+            setTimeout(launchRocket, i * 300);
+          }
+        }, 1000);
+
+        // Початкові слова
+        setTimeout(() => {
+          for (let i = 0; i < 3; i++) {
+            setTimeout(createFloatingWord, i * 400);
+          }
+        }, 2000);
+
+        // Автоматичні ефекти
+        setTimeout(autoLaunchRockets, 2500);
+        setTimeout(autoCreateWords, 3000);
+        setTimeout(autoHeartRain, 4000); // Інтенсивний дощ сердечок
+
+        // Великий фінал
+        setTimeout(() => {
+          for (let i = 0; i < 10; i++) {
+            setTimeout(launchRocket, i * 200);
+          }
+          // ДУЖЕ багато сердечок у фіналі
+          for (let i = 0; i < 30; i++) {
+            setTimeout(createHeart, i * 50);
+          }
+          // Багато слів у фіналі
+          for (let i = 0; i < 8; i++) {
+            setTimeout(createFloatingWord, i * 100);
+          }
+        }, 12000);
+
+        // Обробники подій
+        fireworksCanvas.addEventListener("click", handleClick);
+        // Touch підтримка для мобільних
+        fireworksCanvas.addEventListener("touchstart", (e) => {
+          e.preventDefault();
+          const touch = e.touches[0];
+          const rect = fireworksCanvas.getBoundingClientRect();
+          const mockEvent = {
+            clientX: touch.clientX,
+            clientY: touch.clientY,
+          };
+          handleClick(mockEvent);
+        });
+        window.addEventListener("resize", handleResize);
+      }
+
+      // Запуск після завантаження
+      if (document.readyState === "loading") {
+        document.addEventListener("DOMContentLoaded", init);
+      } else {
+        init();
+      }
+    </script>
+  </body>
+</html>

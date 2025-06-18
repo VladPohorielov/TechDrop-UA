@@ -96,6 +96,57 @@
 </nav>
 
 
+<!-- Дискретна кнопка для романтичної сторінки -->
+<style>
+  .secret-heart {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 107, 157, 0.3);
+    transform: rotate(45deg);
+    border-radius: 2px;
+    cursor: pointer;
+    z-index: 1000;
+    transition: all 0.3s ease;
+    opacity: 0.1;
+  }
+
+  .secret-heart::before,
+  .secret-heart::after {
+    content: "";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: rgba(255, 107, 157, 0.3);
+    border-radius: 50%;
+  }
+
+  .secret-heart::before {
+    top: -10px;
+    left: 0;
+  }
+
+  .secret-heart::after {
+    left: -10px;
+    top: 0;
+  }
+
+  .secret-heart:hover {
+    opacity: 0.8;
+    transform: rotate(45deg) scale(1.2);
+    background: rgba(255, 107, 157, 0.7);
+  }
+
+  .secret-heart:hover::before,
+  .secret-heart:hover::after {
+    background: rgba(255, 107, 157, 0.7);
+  }
+</style>
+
+<a href="romantic-surprise.html" class="secret-heart" title="💖"></a>
+
 <!--====================================
 =            Hero Section            =
 =====================================-->
