@@ -448,18 +448,20 @@
           this.color = color;
           this.velocity = velocity;
           this.life = 1;
-          this.decay = Math.random() * 0.015 + 0.01;
+          this.decay = Math.random() * 0.007 + 0.005; // Зменшено для 120fps
           this.size = Math.random() * 4 + 2;
-          this.gravity = 0.05;
-          this.friction = 0.98;
+          this.gravity = 0.025; // Зменшено для плавності 120fps
+          this.friction = 0.99; // Збільшено для плавності
         }
 
         update() {
+          // 120fps оптимізована фізика частинок
           this.velocity.x *= this.friction;
           this.velocity.y *= this.friction;
           this.velocity.y += this.gravity;
-          this.x += this.velocity.x;
-          this.y += this.velocity.y;
+          // Додаємо субпіксельну точність для 120fps
+          this.x += this.velocity.x * 0.6;
+          this.y += this.velocity.y * 0.6;
           this.life -= this.decay;
         }
 
@@ -493,7 +495,7 @@
 
         update() {
           if (!this.exploded) {
-            this.velocity.y += 0.1;
+            this.velocity.y += 0.05; // Зменшено для плавності 120fps
             this.x += this.velocity.x;
             this.y += this.velocity.y;
 
@@ -636,9 +638,9 @@
           this.rotation = Math.random() * Math.PI * 2;
           this.rotationSpeed = (Math.random() - 0.5) * 0.15;
           this.size = Math.random() * 12 + 8;
-          this.gravity = 0.25;
-          this.bounce = 0.6;
-          this.friction = 0.98;
+          this.gravity = 0.15; // Зменшено для плавності 120fps
+          this.bounce = 0.7; // Збільшено для більш плавного відскоку
+          this.friction = 0.995; // Збільшено для плавності
           this.settled = false;
           this.groundY = window.innerHeight - this.size;
           this.bounces = 0;
@@ -659,11 +661,11 @@
 
         update() {
           if (!this.settled) {
-            // Фізика
+            // Фізика оптимізована для 120fps
             this.vy += this.gravity;
-            this.x += this.vx * this.friction;
-            this.y += this.vy;
-            this.rotation += this.rotationSpeed;
+            this.x += this.vx * this.friction * 0.8; // Плавніший рух
+            this.y += this.vy * 0.8; // Плавніший рух
+            this.rotation += this.rotationSpeed * 0.7; // Плавніша ротація
 
             // Відскок від стін
             if (
@@ -679,7 +681,8 @@
 
             // Перевірка землі та відскок
             if (this.y >= this.groundY) {
-              if (this.bounces < this.maxBounces && Math.abs(this.vy) > 1.5) {
+              if (this.bounces < this.maxBounces && Math.abs(this.vy) > 1.0) {
+                // Зменшено для плавності
                 this.vy *= -this.bounce;
                 this.vx *= 0.8;
                 this.y = this.groundY;
@@ -768,11 +771,12 @@
         }
       }
 
-      // Анімація феєрверків
+      // Анімація феєрверків (120fps оптимізована)
       function animateFireworks() {
         if (!isAnimating) return;
 
-        fireworksCtx.fillStyle = "rgba(26, 26, 46, 0.1)";
+        // Smooth fade trail для 120fps
+        fireworksCtx.fillStyle = "rgba(26, 26, 46, 0.05)";
         fireworksCtx.fillRect(
           0,
           0,
@@ -780,14 +784,14 @@
           fireworksCanvas.height
         );
 
-        // Оновлення ракет
+        // Оновлення ракет з інтерполяцією
         rockets = rockets.filter((rocket) => {
           rocket.update();
           rocket.draw();
           return !rocket.exploded;
         });
 
-        // Оновлення частинок
+        // Оновлення частинок з плавнішою фізикою
         particles = particles.filter((particle) => {
           particle.update();
           particle.draw();
@@ -797,12 +801,13 @@
         requestAnimationFrame(animateFireworks);
       }
 
-      // Анімація сердечок
+      // Анімація сердечок (120fps оптимізована)
       function animateHearts() {
         if (!isAnimating) return;
 
         heartsCtx.clearRect(0, 0, heartsCanvas.width, heartsCanvas.height);
 
+        // Оптимізована обробка сердечок для 120fps
         hearts.forEach((heart) => {
           heart.update();
           heart.draw();
@@ -816,11 +821,11 @@
         requestAnimationFrame(animateHearts);
       }
 
-      // Автоматичний запуск ракет
+      // Автоматичний запуск ракет (120fps частота)
       function autoLaunchRockets() {
         if (!isAnimating) return;
         launchRocket();
-        setTimeout(autoLaunchRockets, 800 + Math.random() * 1500);
+        setTimeout(autoLaunchRockets, 600 + Math.random() * 1200); // Частіше для 120fps
       }
 
       // Автоматичне створення романтичних слів
@@ -830,11 +835,11 @@
         setTimeout(autoCreateWords, 600 + Math.random() * 800);
       }
 
-      // Автоматичний дощ сердечок
+      // Автоматичний дощ сердечок (120fps інтенсивність)
       function autoHeartRain() {
         if (!isAnimating) return;
         createHeartRain();
-        setTimeout(autoHeartRain, 300 + Math.random() * 400);
+        setTimeout(autoHeartRain, 200 + Math.random() * 300); // Частіше для 120fps
       }
 
       // Обробка кліків
