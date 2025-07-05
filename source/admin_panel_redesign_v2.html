@@ -1,0 +1,777 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Release Forms Pre-checks</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+  </head>
+  <body class="bg-gray-50 text-sm">
+    <header
+      class="sticky top-0 z-50 bg-white shadow px-6 py-4 flex flex-wrap justify-between items-center"
+    >
+      <nav class="flex gap-6 flex-wrap">
+        <a href="#" class="font-semibold text-blue-600">Users</a>
+        <a href="#" class="font-semibold text-blue-600">Finances</a>
+        <a href="#" class="font-semibold text-blue-600">Payment Security</a>
+        <a href="#" class="font-semibold text-blue-600">Payouts</a>
+        <a href="#" class="font-semibold text-blue-600">Reports</a>
+        <a href="#" class="font-semibold text-blue-600">Posts</a>
+        <a href="#" class="font-semibold text-blue-600">KYC</a>
+        <a href="#" class="font-semibold text-blue-600">AI Tools</a>
+      </nav>
+      <div
+        class="text-green-700 bg-green-100 px-3 py-1 rounded text-xs font-semibold"
+      >
+        Clock In ⏱ 01:16:33
+      </div>
+    </header>
+
+    <main class="p-6">
+      <div class="mb-4 flex justify-between flex-wrap items-center">
+        <div>
+          <button class="bg-blue-600 text-white px-4 py-2 rounded shadow">
+            My Packs Review
+          </button>
+        </div>
+        <h1 class="text-lg font-semibold w-full mt-2 sm:mt-0 sm:w-auto">
+          Release Forms Pre-checks
+        </h1>
+      </div>
+
+      <div class="mb-6 flex flex-wrap gap-4 text-xs text-gray-700">
+        <span>Packs prechecked: <strong>4</strong></span>
+        <span>Rejected: <strong>32</strong></span>
+        <span>Approved: <strong>8</strong></span>
+        <span>Skipped: <strong>N/A</strong></span>
+      </div>
+
+      <div class="overflow-x-auto">
+        <table class="min-w-[2600px] w-full bg-white shadow rounded">
+          <thead class="bg-gray-100 text-left text-xs">
+            <tr>
+              <th class="p-4">Release Form ID</th>
+              <th class="p-4">User's Info</th>
+              <th class="p-4">User's IV Info</th>
+              <th class="p-4">Partner's Name</th>
+              <th class="p-4">Partner's IV Info</th>
+              <th class="p-4">Signed Document</th>
+              <th class="p-4">Status</th>
+              <th class="p-4">Reason</th>
+              <th class="p-4">Comment</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr class="border-t">
+              <td class="p-4">
+                <div class="font-semibold">819458</div>
+                <div class="mt-2 space-x-2">
+                  <button
+                    class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded"
+                  >
+                    Approve
+                  </button>
+                  <button
+                    class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded"
+                  >
+                    Reject
+                  </button>
+                </div>
+              </td>
+              <td class="p-4">
+                <div class="font-semibold text-blue-600">JadaBaby</div>
+                <div class="text-gray-500">@itsjadababy</div>
+                <div class="mt-2 flex gap-2">
+                  <span
+                    class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded"
+                    >History</span
+                  >
+                  <span
+                    class="bg-gray-200 text-gray-800 text-xs px-2 py-1 rounded"
+                    >Activity</span
+                  >
+                </div>
+              </td>
+              <td class="p-4">
+                <div>
+                  ✔ Is Started<br />✔ Email<br />✔ Verification<br />✔ Signature
+                </div>
+                <div class="mt-2 text-xs">
+                  <div>ID: 25854058</div>
+                  <div>
+                    Status:
+                    <span class="text-green-600 font-semibold">Approved</span>
+                  </div>
+                  <div>Provider: Ondato</div>
+                  <div>Created: 09/11/2024</div>
+                  <div>Finished: 06/20/2024</div>
+                  <div>Document: DRIVER LICENSE</div>
+                  <div>Exp: 02/15/2023</div>
+                  <div class="flex gap-2 mt-2">
+                    <img src="https://via.placeholder.com/50" class="rounded" />
+                    <img src="https://via.placeholder.com/50" class="rounded" />
+                    <img src="https://via.placeholder.com/50" class="rounded" />
+                  </div>
+                </div>
+              </td>
+              <td class="p-4 font-semibold">HeartEaterEX</td>
+              <td class="p-4 text-xs">
+                ✔ All checks passed<br />
+                ID: 87620393<br />
+                Status:
+                <span class="text-green-600 font-semibold">Approved</span><br />
+                Created: 06/20/2024<br />
+                Document: DRIVER LICENSE<br />
+                Exp: 02/10/2026<br />
+                <div class="flex gap-2 mt-2">
+                  <img src="https://via.placeholder.com/50" class="rounded" />
+                  <img src="https://via.placeholder.com/50" class="rounded" />
+                </div>
+              </td>
+              <td class="p-4">
+                <span
+                  class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded"
+                  >Signed</span
+                >
+              </td>
+              <td class="p-4">
+                <a
+                  href="#"
+                  class="text-blue-600 underline text-xs font-semibold"
+                  >View</a
+                >
+              </td>
+              <td class="p-4">
+                <a
+                  href="#"
+                  class="text-blue-600 underline text-xs font-semibold"
+                  >View</a
+                >
+              </td>
+            </tr>
+            <tr class="border-t">
+              <td class="p-4">
+                <div class="font-semibold">81945{0}</div>
+                <div class="mt-2 space-x-2">
+                  <button
+                    class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded"
+                  >
+                    Approve
+                  </button>
+                  <button
+                    class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded"
+                  >
+                    Reject
+                  </button>
+                </div>
+              </td>
+              <td class="p-4">
+                <div class="font-semibold text-blue-600">User{0}</div>
+                <div class="text-gray-500">@user{0}</div>
+                <div class="mt-2 flex gap-2">
+                  <span
+                    class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded"
+                    >History</span
+                  >
+                  <span
+                    class="bg-gray-200 text-gray-800 text-xs px-2 py-1 rounded"
+                    >Active</span
+                  >
+                </div>
+              </td>
+              <td class="p-4">
+                <div>
+                  ✔ Is Started<br />✔ Email<br />✔ Verification<br />✔ Signature
+                </div>
+                <div class="mt-2 text-xs">
+                  <div>ID: 990{0}8332</div>
+                  <div>
+                    Status:
+                    <span class="text-green-600 font-semibold">Approved</span>
+                  </div>
+                  <div>Provider: Ondato</div>
+                  <div>Created: 03/10/2025</div>
+                  <div>Finished: 03/10/2025</div>
+                  <div>Document: DRIVER LICENSE</div>
+                  <div>Exp: 01/01/2030</div>
+                  <div class="flex gap-2 mt-2">
+                    <img src="https://via.placeholder.com/50" class="rounded" />
+                    <img src="https://via.placeholder.com/50" class="rounded" />
+                    <img src="https://via.placeholder.com/50" class="rounded" />
+                  </div>
+                </div>
+              </td>
+              <td class="p-4 font-semibold">Partner{0}</td>
+              <td class="p-4 text-xs">
+                ✔ All checks passed<br />
+                ID: 555{0}555<br />
+                Status:
+                <span class="text-green-600 font-semibold">Approved</span><br />
+                Created: 03/10/2025<br />
+                Document: DRIVER LICENSE<br />
+                Exp: 01/01/2031<br />
+                <div class="flex gap-2 mt-2">
+                  <img src="https://via.placeholder.com/50" class="rounded" />
+                  <img src="https://via.placeholder.com/50" class="rounded" />
+                </div>
+              </td>
+              <td class="p-4">
+                <span
+                  class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded"
+                  >Signed</span
+                >
+              </td>
+              <td class="p-4">
+                <a
+                  href="#"
+                  class="text-blue-600 underline text-xs font-semibold"
+                  >View</a
+                >
+              </td>
+              <td class="p-4">
+                <a
+                  href="#"
+                  class="text-blue-600 underline text-xs font-semibold"
+                  >View</a
+                >
+              </td>
+            </tr>
+            <!-- you can copy/paste or generate dynamically as needed -->
+            <tr class="border-t">
+              <td class="p-4">
+                <div class="font-semibold">81945{0}</div>
+                <div class="mt-2 space-x-2">
+                  <button
+                    class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded"
+                  >
+                    Approve
+                  </button>
+                  <button
+                    class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded"
+                  >
+                    Reject
+                  </button>
+                </div>
+              </td>
+              <td class="p-4">
+                <div class="font-semibold text-blue-600">User{0}</div>
+                <div class="text-gray-500">@user{0}</div>
+                <div class="mt-2 flex gap-2">
+                  <span
+                    class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded"
+                    >History</span
+                  >
+                  <span
+                    class="bg-gray-200 text-gray-800 text-xs px-2 py-1 rounded"
+                    >Active</span
+                  >
+                </div>
+              </td>
+              <td class="p-4">
+                <div>
+                  ✔ Is Started<br />✔ Email<br />✔ Verification<br />✔ Signature
+                </div>
+                <div class="mt-2 text-xs">
+                  <div>ID: 990{0}8332</div>
+                  <div>
+                    Status:
+                    <span class="text-green-600 font-semibold">Approved</span>
+                  </div>
+                  <div>Provider: Ondato</div>
+                  <div>Created: 03/10/2025</div>
+                  <div>Finished: 03/10/2025</div>
+                  <div>Document: DRIVER LICENSE</div>
+                  <div>Exp: 01/01/2030</div>
+                  <div class="flex gap-2 mt-2">
+                    <img src="https://via.placeholder.com/50" class="rounded" />
+                    <img src="https://via.placeholder.com/50" class="rounded" />
+                    <img src="https://via.placeholder.com/50" class="rounded" />
+                  </div>
+                </div>
+              </td>
+              <td class="p-4 font-semibold">Partner{0}</td>
+              <td class="p-4 text-xs">
+                ✔ All checks passed<br />
+                ID: 555{0}555<br />
+                Status:
+                <span class="text-green-600 font-semibold">Approved</span><br />
+                Created: 03/10/2025<br />
+                Document: DRIVER LICENSE<br />
+                Exp: 01/01/2031<br />
+                <div class="flex gap-2 mt-2">
+                  <img src="https://via.placeholder.com/50" class="rounded" />
+                  <img src="https://via.placeholder.com/50" class="rounded" />
+                </div>
+              </td>
+              <td class="p-4">
+                <span
+                  class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded"
+                  >Signed</span
+                >
+              </td>
+              <td class="p-4">
+                <a
+                  href="#"
+                  class="text-blue-600 underline text-xs font-semibold"
+                  >View</a
+                >
+              </td>
+              <td class="p-4">
+                <a
+                  href="#"
+                  class="text-blue-600 underline text-xs font-semibold"
+                  >View</a
+                >
+              </td>
+            </tr>
+            <tr class="border-t">
+              <td class="p-4">
+                <div class="font-semibold">81945{0}</div>
+                <div class="mt-2 space-x-2">
+                  <button
+                    class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded"
+                  >
+                    Approve
+                  </button>
+                  <button
+                    class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded"
+                  >
+                    Reject
+                  </button>
+                </div>
+              </td>
+              <td class="p-4">
+                <div class="font-semibold text-blue-600">User{0}</div>
+                <div class="text-gray-500">@user{0}</div>
+                <div class="mt-2 flex gap-2">
+                  <span
+                    class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded"
+                    >History</span
+                  >
+                  <span
+                    class="bg-gray-200 text-gray-800 text-xs px-2 py-1 rounded"
+                    >Active</span
+                  >
+                </div>
+              </td>
+              <td class="p-4">
+                <div>
+                  ✔ Is Started<br />✔ Email<br />✔ Verification<br />✔ Signature
+                </div>
+                <div class="mt-2 text-xs">
+                  <div>ID: 990{0}8332</div>
+                  <div>
+                    Status:
+                    <span class="text-green-600 font-semibold">Approved</span>
+                  </div>
+                  <div>Provider: Ondato</div>
+                  <div>Created: 03/10/2025</div>
+                  <div>Finished: 03/10/2025</div>
+                  <div>Document: DRIVER LICENSE</div>
+                  <div>Exp: 01/01/2030</div>
+                  <div class="flex gap-2 mt-2">
+                    <img src="https://via.placeholder.com/50" class="rounded" />
+                    <img src="https://via.placeholder.com/50" class="rounded" />
+                    <img src="https://via.placeholder.com/50" class="rounded" />
+                  </div>
+                </div>
+              </td>
+              <td class="p-4 font-semibold">Partner{0}</td>
+              <td class="p-4 text-xs">
+                ✔ All checks passed<br />
+                ID: 555{0}555<br />
+                Status:
+                <span class="text-green-600 font-semibold">Approved</span><br />
+                Created: 03/10/2025<br />
+                Document: DRIVER LICENSE<br />
+                Exp: 01/01/2031<br />
+                <div class="flex gap-2 mt-2">
+                  <img src="https://via.placeholder.com/50" class="rounded" />
+                  <img src="https://via.placeholder.com/50" class="rounded" />
+                </div>
+              </td>
+              <td class="p-4">
+                <span
+                  class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded"
+                  >Signed</span
+                >
+              </td>
+              <td class="p-4">
+                <a
+                  href="#"
+                  class="text-blue-600 underline text-xs font-semibold"
+                  >View</a
+                >
+              </td>
+              <td class="p-4">
+                <a
+                  href="#"
+                  class="text-blue-600 underline text-xs font-semibold"
+                  >View</a
+                >
+              </td>
+            </tr>
+            <tr class="border-t">
+              <td class="p-4">
+                <div class="font-semibold">81945{0}</div>
+                <div class="mt-2 space-x-2">
+                  <button
+                    class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded"
+                  >
+                    Approve
+                  </button>
+                  <button
+                    class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded"
+                  >
+                    Reject
+                  </button>
+                </div>
+              </td>
+              <td class="p-4">
+                <div class="font-semibold text-blue-600">User{0}</div>
+                <div class="text-gray-500">@user{0}</div>
+                <div class="mt-2 flex gap-2">
+                  <span
+                    class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded"
+                    >History</span
+                  >
+                  <span
+                    class="bg-gray-200 text-gray-800 text-xs px-2 py-1 rounded"
+                    >Active</span
+                  >
+                </div>
+              </td>
+              <td class="p-4">
+                <div>
+                  ✔ Is Started<br />✔ Email<br />✔ Verification<br />✔ Signature
+                </div>
+                <div class="mt-2 text-xs">
+                  <div>ID: 990{0}8332</div>
+                  <div>
+                    Status:
+                    <span class="text-green-600 font-semibold">Approved</span>
+                  </div>
+                  <div>Provider: Ondato</div>
+                  <div>Created: 03/10/2025</div>
+                  <div>Finished: 03/10/2025</div>
+                  <div>Document: DRIVER LICENSE</div>
+                  <div>Exp: 01/01/2030</div>
+                  <div class="flex gap-2 mt-2">
+                    <img src="https://via.placeholder.com/50" class="rounded" />
+                    <img src="https://via.placeholder.com/50" class="rounded" />
+                    <img src="https://via.placeholder.com/50" class="rounded" />
+                  </div>
+                </div>
+              </td>
+              <td class="p-4 font-semibold">Partner{0}</td>
+              <td class="p-4 text-xs">
+                ✔ All checks passed<br />
+                ID: 555{0}555<br />
+                Status:
+                <span class="text-green-600 font-semibold">Approved</span><br />
+                Created: 03/10/2025<br />
+                Document: DRIVER LICENSE<br />
+                Exp: 01/01/2031<br />
+                <div class="flex gap-2 mt-2">
+                  <img src="https://via.placeholder.com/50" class="rounded" />
+                  <img src="https://via.placeholder.com/50" class="rounded" />
+                </div>
+              </td>
+              <td class="p-4">
+                <span
+                  class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded"
+                  >Signed</span
+                >
+              </td>
+              <td class="p-4">
+                <a
+                  href="#"
+                  class="text-blue-600 underline text-xs font-semibold"
+                  >View</a
+                >
+              </td>
+              <td class="p-4">
+                <a
+                  href="#"
+                  class="text-blue-600 underline text-xs font-semibold"
+                  >View</a
+                >
+              </td>
+            </tr>
+            <tr class="border-t">
+              <td class="p-4">
+                <div class="font-semibold">81945{0}</div>
+                <div class="mt-2 space-x-2">
+                  <button
+                    class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded"
+                  >
+                    Approve
+                  </button>
+                  <button
+                    class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded"
+                  >
+                    Reject
+                  </button>
+                </div>
+              </td>
+              <td class="p-4">
+                <div class="font-semibold text-blue-600">User{0}</div>
+                <div class="text-gray-500">@user{0}</div>
+                <div class="mt-2 flex gap-2">
+                  <span
+                    class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded"
+                    >History</span
+                  >
+                  <span
+                    class="bg-gray-200 text-gray-800 text-xs px-2 py-1 rounded"
+                    >Active</span
+                  >
+                </div>
+              </td>
+              <td class="p-4">
+                <div>
+                  ✔ Is Started<br />✔ Email<br />✔ Verification<br />✔ Signature
+                </div>
+                <div class="mt-2 text-xs">
+                  <div>ID: 990{0}8332</div>
+                  <div>
+                    Status:
+                    <span class="text-green-600 font-semibold">Approved</span>
+                  </div>
+                  <div>Provider: Ondato</div>
+                  <div>Created: 03/10/2025</div>
+                  <div>Finished: 03/10/2025</div>
+                  <div>Document: DRIVER LICENSE</div>
+                  <div>Exp: 01/01/2030</div>
+                  <div class="flex gap-2 mt-2">
+                    <img src="https://via.placeholder.com/50" class="rounded" />
+                    <img src="https://via.placeholder.com/50" class="rounded" />
+                    <img src="https://via.placeholder.com/50" class="rounded" />
+                  </div>
+                </div>
+              </td>
+              <td class="p-4 font-semibold">Partner{0}</td>
+              <td class="p-4 text-xs">
+                ✔ All checks passed<br />
+                ID: 555{0}555<br />
+                Status:
+                <span class="text-green-600 font-semibold">Approved</span><br />
+                Created: 03/10/2025<br />
+                Document: DRIVER LICENSE<br />
+                Exp: 01/01/2031<br />
+                <div class="flex gap-2 mt-2">
+                  <img src="https://via.placeholder.com/50" class="rounded" />
+                  <img src="https://via.placeholder.com/50" class="rounded" />
+                </div>
+              </td>
+              <td class="p-4">
+                <span
+                  class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded"
+                  >Signed</span
+                >
+              </td>
+              <td class="p-4">
+                <a
+                  href="#"
+                  class="text-blue-600 underline text-xs font-semibold"
+                  >View</a
+                >
+              </td>
+              <td class="p-4">
+                <a
+                  href="#"
+                  class="text-blue-600 underline text-xs font-semibold"
+                  >View</a
+                >
+              </td>
+            </tr>
+            <tr class="border-t">
+              <td class="p-4">
+                <div class="font-semibold">81945{0}</div>
+                <div class="mt-2 space-x-2">
+                  <button
+                    class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded"
+                  >
+                    Approve
+                  </button>
+                  <button
+                    class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded"
+                  >
+                    Reject
+                  </button>
+                </div>
+              </td>
+              <td class="p-4">
+                <div class="font-semibold text-blue-600">User{0}</div>
+                <div class="text-gray-500">@user{0}</div>
+                <div class="mt-2 flex gap-2">
+                  <span
+                    class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded"
+                    >History</span
+                  >
+                  <span
+                    class="bg-gray-200 text-gray-800 text-xs px-2 py-1 rounded"
+                    >Active</span
+                  >
+                </div>
+              </td>
+              <td class="p-4">
+                <div>
+                  ✔ Is Started<br />✔ Email<br />✔ Verification<br />✔ Signature
+                </div>
+                <div class="mt-2 text-xs">
+                  <div>ID: 990{0}8332</div>
+                  <div>
+                    Status:
+                    <span class="text-green-600 font-semibold">Approved</span>
+                  </div>
+                  <div>Provider: Ondato</div>
+                  <div>Created: 03/10/2025</div>
+                  <div>Finished: 03/10/2025</div>
+                  <div>Document: DRIVER LICENSE</div>
+                  <div>Exp: 01/01/2030</div>
+                  <div class="flex gap-2 mt-2">
+                    <img src="https://via.placeholder.com/50" class="rounded" />
+                    <img src="https://via.placeholder.com/50" class="rounded" />
+                    <img src="https://via.placeholder.com/50" class="rounded" />
+                  </div>
+                </div>
+              </td>
+              <td class="p-4 font-semibold">Partner{0}</td>
+              <td class="p-4 text-xs">
+                ✔ All checks passed<br />
+                ID: 555{0}555<br />
+                Status:
+                <span class="text-green-600 font-semibold">Approved</span><br />
+                Created: 03/10/2025<br />
+                Document: DRIVER LICENSE<br />
+                Exp: 01/01/2031<br />
+                <div class="flex gap-2 mt-2">
+                  <img src="https://via.placeholder.com/50" class="rounded" />
+                  <img src="https://via.placeholder.com/50" class="rounded" />
+                </div>
+              </td>
+              <td class="p-4">
+                <span
+                  class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded"
+                  >Signed</span
+                >
+              </td>
+              <td class="p-4">
+                <a
+                  href="#"
+                  class="text-blue-600 underline text-xs font-semibold"
+                  >View</a
+                >
+              </td>
+              <td class="p-4">
+                <a
+                  href="#"
+                  class="text-blue-600 underline text-xs font-semibold"
+                  >View</a
+                >
+              </td>
+            </tr>
+            <tr class="border-t">
+              <td class="p-4">
+                <div class="font-semibold">81945{0}</div>
+                <div class="mt-2 space-x-2">
+                  <button
+                    class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded"
+                  >
+                    Approve
+                  </button>
+                  <button
+                    class="bg-red-100 text-red-800 text-xs px-2 py-1 rounded"
+                  >
+                    Reject
+                  </button>
+                </div>
+              </td>
+              <td class="p-4">
+                <div class="font-semibold text-blue-600">User{0}</div>
+                <div class="text-gray-500">@user{0}</div>
+                <div class="mt-2 flex gap-2">
+                  <span
+                    class="bg-blue-100 text-blue-800 text-xs px-2 py-1 rounded"
+                    >History</span
+                  >
+                  <span
+                    class="bg-gray-200 text-gray-800 text-xs px-2 py-1 rounded"
+                    >Active</span
+                  >
+                </div>
+              </td>
+              <td class="p-4">
+                <div>
+                  ✔ Is Started<br />✔ Email<br />✔ Verification<br />✔ Signature
+                </div>
+                <div class="mt-2 text-xs">
+                  <div>ID: 990{0}8332</div>
+                  <div>
+                    Status:
+                    <span class="text-green-600 font-semibold">Approved</span>
+                  </div>
+                  <div>Provider: Ondato</div>
+                  <div>Created: 03/10/2025</div>
+                  <div>Finished: 03/10/2025</div>
+                  <div>Document: DRIVER LICENSE</div>
+                  <div>Exp: 01/01/2030</div>
+                  <div class="flex gap-2 mt-2">
+                    <img src="https://via.placeholder.com/50" class="rounded" />
+                    <img src="https://via.placeholder.com/50" class="rounded" />
+                    <img src="https://via.placeholder.com/50" class="rounded" />
+                  </div>
+                </div>
+              </td>
+              <td class="p-4 font-semibold">Partner{0}</td>
+              <td class="p-4 text-xs">
+                ✔ All checks passed<br />
+                ID: 555{0}555<br />
+                Status:
+                <span class="text-green-600 font-semibold">Approved</span><br />
+                Created: 03/10/2025<br />
+                Document: DRIVER LICENSE<br />
+                Exp: 01/01/2031<br />
+                <div class="flex gap-2 mt-2">
+                  <img src="https://via.placeholder.com/50" class="rounded" />
+                  <img src="https://via.placeholder.com/50" class="rounded" />
+                </div>
+              </td>
+              <td class="p-4">
+                <span
+                  class="bg-green-100 text-green-800 text-xs px-2 py-1 rounded"
+                  >Signed</span
+                >
+              </td>
+              <td class="p-4">
+                <a
+                  href="#"
+                  class="text-blue-600 underline text-xs font-semibold"
+                  >View</a
+                >
+              </td>
+              <td class="p-4">
+                <a
+                  href="#"
+                  class="text-blue-600 underline text-xs font-semibold"
+                  >View</a
+                >
+              </td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </main>
+    <footer
+      class="bg-slate-600 text-white text-xs px-6 py-4 flex justify-between items-center"
+    >
+      <span>Elements in Progress: 0, Pack: 657764</span>
+      <button
+        class="bg-green-500 hover:bg-green-600 text-white font-semibold py-1 px-3 rounded text-sm"
+      >
+        ✓ Done
+      </button>
+    </footer>
+  </body>
+</html>
